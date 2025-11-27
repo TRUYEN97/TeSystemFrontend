@@ -8,17 +8,17 @@ const resources = {
   en: {
     translation: {
       sign_up_page: {
-        title: "Sign Up"
-      }
-    }
+        title: "Sign Up",
+      },
+    },
   },
   vi: {
     translation: {
       sign_up_page: {
-        title: "Đăng nhập"
-      }
-    }
-  }
+        title: "Đăng nhập",
+      },
+    },
+  },
 };
 
 i18n
@@ -27,8 +27,8 @@ i18n
     resources,
     lng: "vi",
     interpolation: {
-      escapeValue: false
-    }
+      escapeValue: false,
+    },
   });
 
-  export default i18n;
+export default i18n;
