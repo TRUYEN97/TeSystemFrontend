@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
+
 import EyeInvisibleOutlined from "@ant-design/icons/EyeInvisibleOutlined";
 import EyeOutlined from "@ant-design/icons/EyeOutlined";
 
@@ -10,10 +11,10 @@ import Checkbox from "../form/input/CheckBox";
 import Button from "../ui/button/Button";
 
 const SignInForm = () => {
+  const { t } = useTranslation();
+
   const [showPassword, setShowPassword] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
-
-  const { t } = useTranslation();
 
   return (
     <div className="flex flex-col flex-1">
@@ -21,41 +22,40 @@ const SignInForm = () => {
         <div>
           <div className="mb-5 sm:mb-8">
             <h1 className="mb-2 font-semibold text-gray-800 text-title-sm dark:text-white/90 sm:text-title-md">
-              {t("sign_up_page.title")}
+              {t("log_in_page.title")}
             </h1>
-            <p className="text-sm text-gray-500 dark:text-gray-400">Enter your username and password to sign in!</p>
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              {t("log_in_page.description")}
+            </p>
           </div>
           <div>
-            <div className="relative py-3 sm:py-5">
-              <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-gray-200 dark:border-gray-800"></div>
-              </div>
-              <div className="relative flex justify-center text-sm">
-                <span className="p-2 text-gray-400 bg-white dark:bg-gray-900 sm:px-5 sm:py-2">Or</span>
-              </div>
-            </div>
             <form>
               <div className="space-y-6">
                 <div>
                   <Label>
-                    Username <span className="text-error-500">*</span>{" "}
+                    {t("log_in_page.username")} <span className="text-error-500">*</span>{" "}
                   </Label>
-                  <Input placeholder="info@gmail.com" />
+                  <Input placeholder="V123456" />
                 </div>
                 <div>
                   <Label>
-                    Password <span className="text-error-500">*</span>{" "}
+                    {t("log_in_page.password")} <span className="text-error-500">*</span>{" "}
                   </Label>
                   <div className="relative">
-                    <Input type={showPassword ? "text" : "password"} placeholder="Enter your password" />
+                    <Input
+                      type={showPassword ? "text" : "password"}
+                      placeholder={t("log_in_page.placehoder_password")}
+                    />
                     <span
                       onClick={() => setShowPassword(!showPassword)}
                       className="absolute z-30 -translate-y-1/2 cursor-pointer right-4 top-1/2"
                     >
                       {showPassword ? (
-                        <EyeOutlined className="fill-gray-500 dark:fill-gray-400 size-5" />
+                        // <EyeOutlined className="fill-gray-500 dark:fill-gray-400 size-5" />
+                        // <EyeOutlined className="size-5 [svg]:fill-gray-500 dark:[svg]:fill-gray-400" />
+                        <EyeOutlined className="size-5 [&>svg>path]:fill-gray-500 dark:[&>svg>path]:fill-gray-400" />
                       ) : (
-                        <EyeInvisibleOutlined className="fill-gray-500 dark:fill-gray-400 size-5" />
+                        <EyeInvisibleOutlined className="[&>svg>path]:fill-gray-500 dark:[&>svg>path]:fill-gray-400 size-5" />
                       )}
                     </span>
                   </div>
@@ -64,19 +64,19 @@ const SignInForm = () => {
                   <div className="flex items-center gap-3">
                     <Checkbox checked={isChecked} onChange={setIsChecked} />
                     <span className="block font-normal text-gray-700 text-theme-sm dark:text-gray-400">
-                      Keep me logged in
+                      {t("log_in_page.remember_me")}
                     </span>
                   </div>
                   <Link
                     to="/reset-password"
                     className="text-sm text-brand-500 hover:text-brand-600 dark:text-brand-400"
                   >
-                    Forgot password?
+                    {t("log_in_page.forgot_password")}
                   </Link>
                 </div>
                 <div>
                   <Button className="w-full" size="sm">
-                    Sign in
+                    {t("log_in_page.sign_in_button")}
                   </Button>
                 </div>
               </div>
@@ -84,9 +84,12 @@ const SignInForm = () => {
 
             <div className="mt-5">
               <p className="text-sm font-normal text-center text-gray-700 dark:text-gray-400 sm:text-start">
-                Don&apos;t have an account? {""}
-                <Link to="/signup" className="text-brand-500 hover:text-brand-600 dark:text-brand-400">
-                  Sign Up
+                {t("log_in_page.no_account")}? {""}
+                <Link
+                  to="/signup"
+                  className="text-brand-500 hover:text-brand-600 dark:text-brand-400"
+                >
+                  {t("log_in_page.sign_up_link")}
                 </Link>
               </p>
             </div>
@@ -95,6 +98,6 @@ const SignInForm = () => {
       </div>
     </div>
   );
-}
+};
 
 export default SignInForm;

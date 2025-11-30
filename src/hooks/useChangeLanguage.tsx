@@ -10,6 +10,6 @@ const useChangeLanguage = () => {
   };
 
   return { changeLanguage };
-}
+};
 
 export default useChangeLanguage;

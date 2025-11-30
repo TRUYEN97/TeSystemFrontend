@@ -8,14 +8,12 @@ const resources = {
   vi: vi,
 };
 
-i18n
-  .use(initReactI18next)
-  .init({
-    resources,
-    lng: "vi",
-    interpolation: {
-      escapeValue: false,
-    },
-  });
+i18n.use(initReactI18next).init({
+  resources,
+  lng: "vi",
+  interpolation: {
+    escapeValue: false,
+  },
+});
 
 export default i18n;
