@@ -9,7 +9,7 @@ import Input from "../form/input/InputField";
 import Checkbox from "../form/input/CheckBox";
 import Button from "../ui/button/Button";
 
-export default function SignInForm() {
+const SignInForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
 
@@ -23,7 +23,7 @@ export default function SignInForm() {
             <h1 className="mb-2 font-semibold text-gray-800 text-title-sm dark:text-white/90 sm:text-title-md">
               {t("sign_up_page.title")}
             </h1>
-            <p className="text-sm text-gray-500 dark:text-gray-400">Enter your email and password to sign in!</p>
+            <p className="text-sm text-gray-500 dark:text-gray-400">Enter your username and password to sign in!</p>
           </div>
           <div>
             <div className="relative py-3 sm:py-5">
@@ -38,7 +38,7 @@ export default function SignInForm() {
               <div className="space-y-6">
                 <div>
                   <Label>
-                    Email <span className="text-error-500">*</span>{" "}
+                    Username <span className="text-error-500">*</span>{" "}
                   </Label>
                   <Input placeholder="info@gmail.com" />
                 </div>
@@ -96,3 +96,5 @@ export default function SignInForm() {
     </div>
   );
 }
+
+export default SignInForm;
