@@ -8,7 +8,6 @@ import { ThemeProvider } from "./contexts/ThemeContext.tsx";
 import "./index.css";
 import "./i18n.ts";
 
-
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ThemeProvider>
