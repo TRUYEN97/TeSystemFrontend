@@ -1,26 +1,24 @@
 import { useTranslation } from "react-i18next";
 
-import AuthLayout from "../../layout/AuthLayout";
-import SignInForm from "../../components/auth/SignInForm";
 import PageMeta from "../../components/common/PageMeta";
+import AuthLayout from "../../layout/AuthLayout";
+import SignUpForm from "../../components/auth/SignUpForm";
 
-const Login = () => {
+export default function SignUp() {
   const { t } = useTranslation();
 
   return (
     <>
       <PageMeta
-        title={t("log_in_page.meta_title") || "Sign Up"}
+        title={t("sign_up_page.meta_title") || "Sign Up"}
         description={
-          t("log_in_page.meta_description") ||
+          t("sign_up_page.meta_description") ||
           "Create a new account to get started!"
         }
       />
       <AuthLayout>
-        <SignInForm />
+        <SignUpForm />
       </AuthLayout>
     </>
   );
-};
-
-export default Login;
+}

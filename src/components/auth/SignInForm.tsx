@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 import EyeInvisibleOutlined from "@ant-design/icons/EyeInvisibleOutlined";
 import EyeOutlined from "@ant-design/icons/EyeOutlined";
@@ -33,13 +33,15 @@ const SignInForm = () => {
               <div className="space-y-6">
                 <div>
                   <Label>
-                    {t("log_in_page.username")} <span className="text-error-500">*</span>{" "}
+                    {t("log_in_page.username")}{" "}
+                    <span className="text-error-500">*</span>{" "}
                   </Label>
                   <Input placeholder="V123456" />
                 </div>
                 <div>
                   <Label>
-                    {t("log_in_page.password")} <span className="text-error-500">*</span>{" "}
+                    {t("log_in_page.password")}{" "}
+                    <span className="text-error-500">*</span>{" "}
                   </Label>
                   <div className="relative">
                     <Input
@@ -51,8 +53,6 @@ const SignInForm = () => {
                       className="absolute z-30 -translate-y-1/2 cursor-pointer right-4 top-1/2"
                     >
                       {showPassword ? (
-                        // <EyeOutlined className="fill-gray-500 dark:fill-gray-400 size-5" />
-                        // <EyeOutlined className="size-5 [svg]:fill-gray-500 dark:[svg]:fill-gray-400" />
                         <EyeOutlined className="size-5 [&>svg>path]:fill-gray-500 dark:[&>svg>path]:fill-gray-400" />
                       ) : (
                         <EyeInvisibleOutlined className="[&>svg>path]:fill-gray-500 dark:[&>svg>path]:fill-gray-400 size-5" />
@@ -84,7 +84,7 @@ const SignInForm = () => {
 
             <div className="mt-5">
               <p className="text-sm font-normal text-center text-gray-700 dark:text-gray-400 sm:text-start">
-                {t("log_in_page.no_account")}? {""}
+                {t("log_in_page.no_account")} {""}
                 <Link
                   to="/signup"
                   className="text-brand-500 hover:text-brand-600 dark:text-brand-400"
