@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 import EyeInvisibleOutlined from "@ant-design/icons/EyeInvisibleOutlined";
 import EyeOutlined from "@ant-design/icons/EyeOutlined";
