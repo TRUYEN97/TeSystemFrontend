@@ -1,6 +1,8 @@
 const vi = {
   translation: {
     log_in_page: {
+      meta_title: "Đăng nhập",
+      meta_description: "Đây là trang đăng nhập",
       title: "Đăng nhập",
       description: "Nhập tên đăng nhập và mật khẩu của bạn để đăng nhập!",
       username: "Tên đăng nhập",
@@ -11,6 +13,25 @@ const vi = {
       sign_in_button: "Đăng nhập",
       no_account: "Chưa có tài khoản?",
       sign_up_link: "Đăng ký ngay",
+    },
+    sign_up_page: {
+      meta_title: "Đăng ký",
+      meta_description: "Đây là trang đăng ký",
+      title: "Đăng ký",
+      description: "Tạo tài khoản mới để bắt đầu sử dụng dịch vụ!",
+      first_name: "Tên",
+      last_name: "Họ",
+      username: "Tên đăng nhập",
+      username_placeholder: "Nhập mã nhân viên của bạn",
+      password: "Mật khẩu",
+      password_placeholder: "Nhập mật khẩu của bạn",
+      confirm_password: "Xác nhận mật khẩu",
+      confirm_password_placeholder: "Nhập lại mật khẩu của bạn",
+      terms_conditions:
+        "Bằng việc tạo tài khoản, bạn đồng ý với Điều khoản và Chính sách bảo mật của chúng tôi.",
+      sign_up_button: "Đăng ký",
+      have_account: "Đã có tài khoản?",
+      sign_in_link: "Đăng nhập ngay",
     },
   },
 };
