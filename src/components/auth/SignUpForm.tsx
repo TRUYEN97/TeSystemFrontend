@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-import EyeInvisibleOutlined from "@ant-design/icons/EyeInvisibleOutlined";
-import EyeOutlined from "@ant-design/icons/EyeOutlined";
+import { LuEye } from "react-icons/lu";
+import { LuEyeOff } from "react-icons/lu";
 
 import Label from "../form/Label";
 import Input from "../form/input/InputField";
@@ -91,9 +91,9 @@ const SignUpForm = () => {
                       className="absolute z-30 -translate-y-1/2 cursor-pointer right-4 top-1/2"
                     >
                       {showPassword ? (
-                        <EyeOutlined className="size-5 [&>svg>path]:fill-gray-500 dark:[&>svg>path]:fill-gray-400" />
+                        <LuEye className="size-5 [&>svg>path]:fill-gray-500 dark:[&>svg>path]:fill-gray-400" />
                       ) : (
-                        <EyeInvisibleOutlined className="[&>svg>path]:fill-gray-500 dark:[&>svg>path]:fill-gray-400 size-5" />
+                        <LuEyeOff className="[&>svg>path]:fill-gray-500 dark:[&>svg>path]:fill-gray-400 size-5" />
                       )}
                     </span>
                   </div>
@@ -116,9 +116,9 @@ const SignUpForm = () => {
                       className="absolute z-30 -translate-y-1/2 cursor-pointer right-4 top-1/2"
                     >
                       {showPassword ? (
-                        <EyeOutlined className="size-5 [&>svg>path]:fill-gray-500 dark:[&>svg>path]:fill-gray-400" />
+                        <LuEye className="size-5 [&>svg>path]:fill-gray-500 dark:[&>svg>path]:fill-gray-400" />
                       ) : (
-                        <EyeInvisibleOutlined className="[&>svg>path]:fill-gray-500 dark:[&>svg>path]:fill-gray-400 size-5" />
+                        <LuEyeOff className="[&>svg>path]:fill-gray-500 dark:[&>svg>path]:fill-gray-400 size-5" />
                       )}
                     </span>
                   </div>
