@@ -5,15 +5,10 @@ import { GoPerson } from "react-icons/go";
 import { FaWpforms } from "react-icons/fa";
 import { LuAppWindowMac } from "react-icons/lu";
 import { IoChevronDown } from "react-icons/io5";
+import { FiCalendar } from "react-icons/fi";
+import { IoEllipsisHorizontalSharp } from "react-icons/io5";
 
 
-
-import {
-  CalendarOutlined,
-  EllipsisOutlined,
-  UnorderedListOutlined,
-  RadiusUprightOutlined
-} from "@ant-design/icons";
 
 import { useSidebar } from "../../hooks/useSidebar";
 
@@ -31,7 +26,7 @@ const navItems: NavItem[] = [
     subItems: [{ name: "Ecommerce", path: "/", pro: false }],
   },
   {
-    icon: <CalendarOutlined />,
+    icon: <FiCalendar />,
     name: "Calendar",
     path: "/calendar",
   },
@@ -44,20 +39,7 @@ const navItems: NavItem[] = [
     name: "Forms",
     icon: <FaWpforms />,
     subItems: [{ name: "Form Elements", path: "/form-elements", pro: false }],
-  },
-  {
-    name: "Tables",
-    icon: <UnorderedListOutlined />,
-    subItems: [{ name: "Basic Tables", path: "/basic-tables", pro: false }],
-  },
-  {
-    name: "Pages",
-    icon: <RadiusUprightOutlined />,
-    subItems: [
-      { name: "Blank Page", path: "/blank", pro: false },
-      { name: "404 Error", path: "/error-404", pro: false },
-    ],
-  },
+  }
 ];
 
 const AppSidebar: React.FC = () => {
@@ -275,7 +257,7 @@ const AppSidebar: React.FC = () => {
                 {isExpanded || isHovered || isMobileOpen ? (
                   "Menu"
                 ) : (
-                  <EllipsisOutlined className="size-6" />
+                  <IoEllipsisHorizontalSharp className="size-6" />
                 )}
               </h2>
               {renderMenuItems(navItems, "main")}

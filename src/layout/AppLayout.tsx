@@ -4,7 +4,7 @@ import { SidebarProvider } from "../contexts/SidebarContext";
 import { useSidebar } from "../hooks/useSidebar";
 import AppSidebar from "../components/layout/AppSidebar";
 import Backdrop from "../components/layout/BackDrop";
-// import AppHeader from "./AppHeader";
+import AppHeader from "../components/layout/AppHeader";
 
 const LayoutContent: React.FC = () => {
   const { isExpanded, isHovered, isMobileOpen } = useSidebar();
@@ -20,7 +20,7 @@ const LayoutContent: React.FC = () => {
           isExpanded || isHovered ? "lg:ml-[290px]" : "lg:ml-[90px]"
         } ${isMobileOpen ? "ml-0" : ""}`}
       >
-        {/* <AppHeader /> */}
+        <AppHeader />
         <div className="p-4 mx-auto max-w-(--breakpoint-2xl) md:p-6">
           <Outlet />
         </div>
