@@ -1,6 +1,6 @@
 import { useState } from "react";
-import DropdownItem from "../drop-down/DropDownItem"
-import Dropdown  from "../drop-down/DropDown";
+import DropdownItem from "../drop-down/DropDownItem";
+import Dropdown from "../drop-down/DropDown";
 import { Link } from "react-router";
 
 const UserDropdown = () => {
@@ -159,6 +159,6 @@ const UserDropdown = () => {
       </Dropdown>
     </div>
   );
-}
+};
 
 export default UserDropdown;

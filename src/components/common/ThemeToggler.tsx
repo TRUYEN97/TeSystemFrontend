@@ -1,4 +1,4 @@
-import { useTheme } from "../../hooks/useTheme";
+import { useTheme } from "../../hooks/use-theme";
 
 export default function ThemeTogglerTwo() {
   const { toggleTheme } = useTheme();
