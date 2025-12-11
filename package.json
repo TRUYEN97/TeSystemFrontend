@@ -13,6 +13,7 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.1.17",
     "@tanstack/react-query": "^5.90.12",
+    "antd": "^6.1.0",
     "axios": "^1.13.2",
     "clsx": "^2.1.1",
     "i18next": "^25.6.3",

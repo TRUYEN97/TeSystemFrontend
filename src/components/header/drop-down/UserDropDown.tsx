@@ -19,8 +19,8 @@ const UserDropdown = () => {
         onClick={toggleDropdown}
         className="flex items-center text-gray-700 dropdown-toggle dark:text-gray-400"
       >
-        <span className="mr-3 overflow-hidden rounded-full h-11 w-11">
-          <img src="/images/user/owner.jpg" alt="User" />
+        <span className="mr-3 overflow-hidden rounded-full h-9 w-9">
+          <img src="/images/users/user.svg" alt="User" />
         </span>
 
         <span className="block mr-1 font-medium text-theme-sm">User</span>

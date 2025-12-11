@@ -19,7 +19,6 @@ const useLogin = () => {
             navigate(ROUTE.HOME)
             storeToken(STORAGE_TOKEN.ACCESS_TOKEN, reponse.data.data.accessToken);
             storeToken(STORAGE_TOKEN.REFRESH_TOKEN, reponse.data.data.refreshToken);
-
         },
         onError: (error: {response: { data: {message: string}}}) => {
             toast(error.response.data.message, {

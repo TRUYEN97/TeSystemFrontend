@@ -10,21 +10,9 @@ export interface Product {
 }
 
 const Home = () => {
-  const { data: products, isLoading } = useGetProducts();
-
-  if (isLoading) return <div>Loading...</div>;
-
-  return (
-    <ul>
-      {products?.map((product: Product) => {
-        return (
-          <li>
-            <p>{product.title}</p>
-          </li>
-        );
-      })}
-    </ul>
-  );
+  return <div>
+    Home page
+  </div>
 };
 
 export default Home;
