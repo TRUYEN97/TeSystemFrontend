@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 
 import { SidebarProvider } from "../contexts/SidebarContext";
-import { useSidebar } from "../hooks/useSidebar";
+import { useSidebar } from "../hooks/use-sidebar";
 import AppSidebar from "../components/layout/AppSidebar";
 import Backdrop from "../components/layout/BackDrop";
 import AppHeader from "../components/layout/AppHeader";
@@ -16,7 +16,7 @@ const LayoutContent: React.FC = () => {
         <Backdrop />
       </div>
       <div
-        className={`flex-1 transition-all duration-300 ease-in-out ${
+        className={`flex-1 transition-all duration-300 ease-in-out dark:bg-gray-700 ${
           isExpanded || isHovered ? "lg:ml-[290px]" : "lg:ml-[90px]"
         } ${isMobileOpen ? "ml-0" : ""}`}
       >

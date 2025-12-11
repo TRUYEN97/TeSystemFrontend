@@ -13,7 +13,9 @@ type SidebarContextType = {
   toggleSubmenu: (item: string) => void;
 };
 
-export const SidebarContext = createContext<SidebarContextType | undefined>(undefined);
+export const SidebarContext = createContext<SidebarContextType | undefined>(
+  undefined,
+);
 
 export const SidebarProvider: React.FC<{ children: React.ReactNode }> = ({
   children,

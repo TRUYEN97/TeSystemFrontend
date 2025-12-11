@@ -1,4 +1,4 @@
-import React from "react";
+import React, { type FormEvent } from "react";
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -6,7 +6,7 @@ interface ButtonProps {
   variant?: "primary" | "outline";
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
-  onClick?: () => void;
+  onClick?: (event: any) => void;
   disabled?: boolean;
   className?: string;
 }

@@ -10,11 +10,8 @@ const Login = () => {
   return (
     <>
       <PageMeta
-        title={t("log_in_page.meta_title") || "Sign Up"}
-        description={
-          t("log_in_page.meta_description") ||
-          "Create a new account to get started!"
-        }
+        title={t("log_in_page.meta_title")}
+        description={t("log_in_page.meta_description")}
       />
       <AuthLayout>
         <SignInForm />
