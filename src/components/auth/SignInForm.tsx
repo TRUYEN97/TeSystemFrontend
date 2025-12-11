@@ -10,12 +10,20 @@ import Input from "../form/input/InputField";
 import Checkbox from "../form/input/CheckBox";
 import Button from "../ui/button/Button";
 import { ROUTE } from "../../constants/routes";
+import useLoginForm from "../../hooks/component/auth/use-login-form";
+import { checkInputFieldHasError } from "../../utils/auth";
 
 const SignInForm = () => {
   const { t } = useTranslation();
 
-  const [showPassword, setShowPassword] = useState(false);
-  const [isChecked, setIsChecked] = useState(false);
+  const {
+    showPassword,
+    setShowPassword,
+    loginInput,
+    loginInputError,
+    handleInputChange,
+    handleSubmit
+  } = useLoginForm();
 
   return (
     <div className="flex flex-col flex-1">
@@ -37,7 +45,14 @@ const SignInForm = () => {
                     {t("log_in_page.username")}{" "}
                     <span className="text-error-500">*</span>{" "}
                   </Label>
-                  <Input placeholder="V123456" />
+                  <Input
+                    placeholder="V123456"
+                    name="username"
+                    value={loginInput?.username}
+                    onChange={handleInputChange}
+                    error={checkInputFieldHasError(loginInputError?.username)}
+                    hint={checkInputFieldHasError(loginInputError?.username) ? t(`${loginInputError?.username}`) : undefined}
+                  />
                 </div>
                 <div>
                   <Label>
@@ -46,8 +61,13 @@ const SignInForm = () => {
                   </Label>
                   <div className="relative">
                     <Input
+                      name="password"
                       type={showPassword ? "text" : "password"}
                       placeholder={t("log_in_page.placehoder_password")}
+                      value={loginInput?.password}
+                      onChange={handleInputChange}
+                      error={checkInputFieldHasError(loginInputError?.password)}
+                      hint={checkInputFieldHasError(loginInputError?.password) ? t(`${loginInputError?.password}`) : undefined}
                     />
                     <span
                       onClick={() => setShowPassword(!showPassword)}
@@ -76,7 +96,9 @@ const SignInForm = () => {
                   </Link> */}
                 </div>
                 <div>
-                  <Button className="w-full" size="sm">
+                  <Button className="w-full" size="sm"
+                    onClick={handleSubmit}
+                  >
                     {t("log_in_page.sign_in_button")}
                   </Button>
                 </div>

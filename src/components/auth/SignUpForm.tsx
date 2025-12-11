@@ -13,7 +13,6 @@ import { ROUTE } from "../../constants/routes";
 
 const SignUpForm = () => {
   const { t } = useTranslation();
-
   const {
     showPassword,
     setShowPassword,

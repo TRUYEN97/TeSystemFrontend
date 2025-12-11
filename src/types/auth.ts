@@ -20,3 +20,18 @@ export type SignUpRequestType = {
     email: string;
     password: string;
 }
+
+export type LoginInputType = {
+  username?: string;
+  password?: string;
+}
+
+export type LoginInputErrorType = {
+  username?: string;
+  password?: string;
+}
+
+export type LoginRequestType = {
+  username: string;
+  password: string;
+}

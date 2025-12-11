@@ -13,6 +13,10 @@ const vi = {
       sign_in_button: "Đăng nhập",
       no_account: "Chưa có tài khoản?",
       sign_up_link: "Đăng ký ngay",
+      error: {
+        empty_username: "Nhập tài khoản đăng nhập!",
+        empty_password: "Nhập mật khẩu!",
+      },
     },
     sign_up_page: {
       meta_title: "Đăng ký",
