@@ -3,7 +3,7 @@ import axios, { AxiosError, type InternalAxiosRequestConfig } from "axios";
 import { getAccessToken } from "../../utils/token";
 
 export const axiosClient = axios.create({
-  baseURL: "https://fakestoreapi.com/",
+  baseURL: "https://localhost:7201/",
   headers: {
     Accept: "application/json, text/plain, */*",
   },

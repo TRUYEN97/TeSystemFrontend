@@ -9,6 +9,7 @@ import Label from "../form/Label";
 import Input from "../form/input/InputField";
 import Checkbox from "../form/input/CheckBox";
 import Button from "../ui/button/Button";
+import { ROUTE } from "../../constants/routes";
 
 const SignInForm = () => {
   const { t } = useTranslation();
@@ -61,7 +62,7 @@ const SignInForm = () => {
                   </div>
                 </div>
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
+                  {/* <div className="flex items-center gap-3">
                     <Checkbox checked={isChecked} onChange={setIsChecked} />
                     <span className="block font-normal text-gray-700 text-theme-sm dark:text-gray-400">
                       {t("log_in_page.remember_me")}
@@ -72,7 +73,7 @@ const SignInForm = () => {
                     className="text-sm text-brand-500 hover:text-brand-600 dark:text-brand-400"
                   >
                     {t("log_in_page.forgot_password")}
-                  </Link>
+                  </Link> */}
                 </div>
                 <div>
                   <Button className="w-full" size="sm">
@@ -86,7 +87,7 @@ const SignInForm = () => {
               <p className="text-sm font-normal text-center text-gray-700 dark:text-gray-400 sm:text-start">
                 {t("log_in_page.no_account")} {""}
                 <Link
-                  to="/signup"
+                  to={ROUTE.SIGNUP}
                   className="text-brand-500 hover:text-brand-600 dark:text-brand-400"
                 >
                   {t("log_in_page.sign_up_link")}

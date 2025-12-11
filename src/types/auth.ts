@@ -13,3 +13,10 @@ export type SignUpInputErrorType = {
   confirmPassword?: string;
   policyConfirmed?: string;
 };
+
+export type SignUpRequestType = {
+    name: string;
+    username: string;
+    email: string;
+    password: string;
+}

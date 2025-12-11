@@ -8,6 +8,7 @@ import Label from "../form/Label";
 import Input from "../form/input/InputField";
 import Checkbox from "../form/input/CheckBox";
 import { checkInputFieldHasError } from "../../utils/auth";
+import { ROUTE } from "../../constants/routes";
 
 
 const SignUpForm = () => {
@@ -141,6 +142,7 @@ const SignUpForm = () => {
                     className="w-5 h-5"
                     checked={signUpInputData?.policyConfirmed || false}
                     onChange={handleConfirmPolicy}
+                    disabled
                   />
                   <p className="inline-block font-normal text-gray-500 dark:text-gray-400">
                     {t("sign_up_page.terms_conditions")}{" "}
@@ -162,7 +164,7 @@ const SignUpForm = () => {
               <p className="text-sm font-normal text-center text-gray-700 dark:text-gray-400 sm:text-start">
                 {t("sign_up_page.have_account")} {""}
                 <Link
-                  to="/login"
+                  to={ROUTE.LOGIN}
                   className="text-brand-500 hover:text-brand-600 dark:text-brand-400"
                 >
                   {t("sign_up_page.sign_in_link")}

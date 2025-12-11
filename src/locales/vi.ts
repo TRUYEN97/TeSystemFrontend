@@ -33,11 +33,14 @@ const vi = {
       have_account: "Đã có tài khoản?",
       sign_in_link: "Đăng nhập ngay",
       error: {
-        empty_fullname: "empty_fullname_message",
-        empty_username: "empty_username_message",
-        empty_passoword: "empty_password_message",
-        empty_confirm_password: "empty_confirm_password_message",
-        password_and_confirm_not_match: "password_and_confirm_not_match_message"
+        empty_fullname: "Nhập họ và tên!",
+        empty_username: "Nhập tài khoản đăng nhập!",
+        empty_password: "Nhập mật khẩu!",
+        empty_confirm_password: "Nhập xác nhận mật khẩu!",
+        password_and_confirm_not_match: "Mật khẩu và xác nhận không giống nhau!"
+      },
+      message: {
+        success: "Đăng ký tài khoản thành công"
       }
     },
   },
