@@ -2,7 +2,6 @@ import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-
 import AppLayout from "./layout/AppLayout";
 import Login from "./pages/AuthPages/Login";
 import SignUp from "./pages/AuthPages/SignUp";
@@ -24,7 +23,6 @@ function App() {
         </Routes>
       </Router>
     </QueryClientProvider>
-    
   );
 }
 

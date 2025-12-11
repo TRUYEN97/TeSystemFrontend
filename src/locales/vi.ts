@@ -18,9 +18,9 @@ const vi = {
       meta_title: "Đăng ký",
       meta_description: "Đây là trang đăng ký",
       title: "Đăng ký",
-      description: "Tạo tài khoản mới để bắt đầu sử dụng dịch vụ!",
-      first_name: "Tên",
-      last_name: "Họ",
+      description: "Tạo tài khoản mới để bắt đầu",
+      full_name: "Họ và tên",
+      full_name_placehoder: "Nhập họ và tên",
       username: "Tên đăng nhập",
       username_placeholder: "Nhập mã nhân viên của bạn",
       password: "Mật khẩu",
@@ -32,6 +32,13 @@ const vi = {
       sign_up_button: "Đăng ký",
       have_account: "Đã có tài khoản?",
       sign_in_link: "Đăng nhập ngay",
+      error: {
+        empty_fullname: "empty_fullname_message",
+        empty_username: "empty_username_message",
+        empty_passoword: "empty_password_message",
+        empty_confirm_password: "empty_confirm_password_message",
+        password_and_confirm_not_match: "password_and_confirm_not_match_message"
+      }
     },
   },
 };

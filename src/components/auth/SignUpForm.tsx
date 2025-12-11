@@ -1,19 +1,28 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-
 import { LuEye } from "react-icons/lu";
 import { LuEyeOff } from "react-icons/lu";
 
+import useSignUpForm from "../../hooks/component/auth/use-sign-up-form";
 import Label from "../form/Label";
 import Input from "../form/input/InputField";
 import Checkbox from "../form/input/CheckBox";
+import { checkInputFieldHasError } from "../../utils/auth";
+
 
 const SignUpForm = () => {
   const { t } = useTranslation();
 
-  const [showPassword, setShowPassword] = useState(false);
-  const [isChecked, setIsChecked] = useState(false);
+  const {
+    showPassword,
+    setShowPassword,
+    signUpInputData,
+    handleChangeInputData,
+    handleConfirmPolicy,
+    signUpInputError,
+    handleSubmitRegister,
+  } = useSignUpForm();
+
   return (
     <div className="flex flex-col flex-1 w-full overflow-y-auto lg:w-1/2 no-scrollbar">
       <div className="w-full max-w-md mx-auto mb-5 sm:pt-10"></div>
@@ -35,32 +44,21 @@ const SignUpForm = () => {
             </div>
             <form>
               <div className="space-y-5">
-                <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                  <div className="sm:col-span-1">
-                    <Label>
-                      {t("sign_up_page.first_name")}
-                      <span className="text-error-500">*</span>
-                    </Label>
-                    <Input
-                      type="text"
-                      id="fname"
-                      name="fname"
-                      placeholder="Enter your first name"
-                    />
-                  </div>
-
-                  <div className="sm:col-span-1">
-                    <Label>
-                      {t("sign_up_page.last_name")}
-                      <span className="text-error-500">*</span>
-                    </Label>
-                    <Input
-                      type="text"
-                      id="lname"
-                      name="lname"
-                      placeholder="Enter your last name"
-                    />
-                  </div>
+                <div className="sm:col-span-1">
+                  <Label>
+                    {t("sign_up_page.full_name")}
+                    <span className="text-error-500">*</span>
+                  </Label>
+                  <Input
+                    type="text"
+                    id="fullname"
+                    name="fullname"
+                    placeholder={t("sign_up_page.full_name_placehoder")}
+                    value={signUpInputData?.fullname}
+                    onChange={handleChangeInputData}
+                    error={checkInputFieldHasError(signUpInputError?.fullname)}
+                    hint={checkInputFieldHasError(signUpInputError?.fullname) ? t(`${signUpInputError?.fullname}`) : undefined}
+                  />
                 </div>
 
                 <div>
@@ -70,9 +68,13 @@ const SignUpForm = () => {
                   </Label>
                   <Input
                     type="text"
-                    id="text"
-                    name="text"
+                    id="username"
+                    name="username"
                     placeholder={t("sign_up_page.username_placeholder")}
+                    value={signUpInputData?.username}
+                    onChange={handleChangeInputData}
+                    error={checkInputFieldHasError(signUpInputError?.username)}
+                    hint={checkInputFieldHasError(signUpInputError?.username) ? t(`${signUpInputError?.username}`) : undefined}
                   />
                 </div>
 
@@ -83,17 +85,22 @@ const SignUpForm = () => {
                   </Label>
                   <div className="relative">
                     <Input
+                      name="password"
                       placeholder={t("sign_up_page.password_placeholder")}
                       type={showPassword ? "text" : "password"}
+                      value={signUpInputData?.password}
+                      onChange={handleChangeInputData}
+                      error={checkInputFieldHasError(signUpInputError?.password)}
+                      hint={checkInputFieldHasError(signUpInputError?.password) ? t(`${signUpInputError?.password}`) : undefined}
                     />
                     <span
                       onClick={() => setShowPassword(!showPassword)}
                       className="absolute z-30 -translate-y-1/2 cursor-pointer right-4 top-1/2"
                     >
                       {showPassword ? (
-                        <LuEye className="size-5 [&>svg>path]:fill-gray-500 dark:[&>svg>path]:fill-gray-400" />
+                        <LuEye className="size-5 text-gray-500 dark:text-gray-400" />
                       ) : (
-                        <LuEyeOff className="[&>svg>path]:fill-gray-500 dark:[&>svg>path]:fill-gray-400 size-5" />
+                        <LuEyeOff className="size-5 text-gray-500 dark:text-gray-400" />
                       )}
                     </span>
                   </div>
@@ -106,19 +113,24 @@ const SignUpForm = () => {
                   </Label>
                   <div className="relative">
                     <Input
+                      name="confirmPassword"
                       placeholder={t(
                         "sign_up_page.confirm_password_placeholder",
                       )}
                       type={showPassword ? "text" : "password"}
+                      value={signUpInputData?.confirmPassword}
+                      onChange={handleChangeInputData}
+                      error={checkInputFieldHasError(signUpInputError?.confirmPassword)}
+                      hint={checkInputFieldHasError(signUpInputError?.confirmPassword) ? t(`${signUpInputError?.confirmPassword}`) : undefined}
                     />
                     <span
                       onClick={() => setShowPassword(!showPassword)}
                       className="absolute z-30 -translate-y-1/2 cursor-pointer right-4 top-1/2"
                     >
                       {showPassword ? (
-                        <LuEye className="size-5 [&>svg>path]:fill-gray-500 dark:[&>svg>path]:fill-gray-400" />
+                        <LuEye className="size-5 text-gray-500 dark:text-gray-400" />
                       ) : (
-                        <LuEyeOff className="[&>svg>path]:fill-gray-500 dark:[&>svg>path]:fill-gray-400 size-5" />
+                        <LuEyeOff className="size-5 text-gray-500 dark:text-gray-400" />
                       )}
                     </span>
                   </div>
@@ -127,8 +139,8 @@ const SignUpForm = () => {
                 <div className="flex items-center gap-3">
                   <Checkbox
                     className="w-5 h-5"
-                    checked={isChecked}
-                    onChange={setIsChecked}
+                    checked={signUpInputData?.policyConfirmed || false}
+                    onChange={handleConfirmPolicy}
                   />
                   <p className="inline-block font-normal text-gray-500 dark:text-gray-400">
                     {t("sign_up_page.terms_conditions")}{" "}
@@ -137,7 +149,9 @@ const SignUpForm = () => {
                 </div>
 
                 <div>
-                  <button className="flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-white transition rounded-lg bg-brand-500 shadow-theme-xs hover:bg-brand-600">
+                  <button className="flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-white transition rounded-lg bg-brand-500 shadow-theme-xs hover:bg-brand-600"
+                    onClick={e => handleSubmitRegister(e)}
+                  >
                     {t("sign_up_page.sign_up_button")}
                   </button>
                 </div>

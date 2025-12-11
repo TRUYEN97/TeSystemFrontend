@@ -5,9 +5,9 @@ export const getAccessToken = () => {
 };
 
 export const getRefreshToken = () => {
-    return localStorage.getItem(STORAGE_TOKEN.REFRESH_TOKEN) || null;
-}
+  return localStorage.getItem(STORAGE_TOKEN.REFRESH_TOKEN) || null;
+};
 
 export const storeToken = (key: STORAGE_TOKEN, token: string) => {
-    localStorage.setItem(key, token);
-}
+  localStorage.setItem(key, token);
+};

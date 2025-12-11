@@ -1,4 +1,4 @@
-import useGetProducts from "../../hooks/products/use-get-products";
+import useGetProducts from "../../hooks/api/products/use-get-products";
 
 export interface Product {
   id: number;
@@ -10,19 +10,21 @@ export interface Product {
 }
 
 const Home = () => {
-  const {data: products, isLoading} = useGetProducts();
+  const { data: products, isLoading } = useGetProducts();
 
-  if (isLoading) return <div>Loading...</div>
+  if (isLoading) return <div>Loading...</div>;
 
-  return <ul>
-    {products?.map((product: Product) => {
-      return (
-        <li>
-          <p>{product.title}</p>
-        </li>
-      )
-    })}
-  </ul>;
+  return (
+    <ul>
+      {products?.map((product: Product) => {
+        return (
+          <li>
+            <p>{product.title}</p>
+          </li>
+        );
+      })}
+    </ul>
+  );
 };
 
 export default Home;
