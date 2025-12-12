@@ -1,6 +1,7 @@
-import { useState } from 'react';
-import { Space, Table } from 'antd';
+import { Button, Space, Table, Tag } from 'antd';
 import type { TableProps } from 'antd';
+import { Link } from 'react-router-dom';
+
 import type { UserType } from '../../types/users';
 import useGetUsers from '../../hooks/api/users/use-get-users';
 
@@ -14,21 +15,26 @@ const columns: TableProps<UserType>['columns'] = [
     title: 'Name',
     dataIndex: 'name',
     key: 'name',
-    render: (text) => <a>{text}</a>,
+    render: (_, record) => <Link to={`/users/${record.id}`}>{record.name}</Link>
   },
   {
-    title: 'Action',
-    key: 'action',
-    render: (_, record) => (
-      <Space size="middle">
-        <a>Delete</a>
-      </Space>
-    ),
+    title: 'Email',
+    dataIndex: 'email',
+    key: 'email',
   },
+  {
+    title: "Teams",
+    key: 'teams',
+    render: (_, record) => (
+      record.teams?.map((team) => (
+        <Tag color='blue-inverse' variant='outlined'>{team.name}</Tag>
+      ))
+    )
+  }
 ];
 
 const UsersPage = () => {
-  const {data: users} = useGetUsers();
+  const { data: users } = useGetUsers();
 
   return <Table<UserType> columns={columns} dataSource={users?.data.data} />
 }
