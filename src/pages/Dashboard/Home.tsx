@@ -1,4 +1,3 @@
-import useGetProducts from "../../hooks/api/products/use-get-products";
 
 export interface Product {
   id: number;

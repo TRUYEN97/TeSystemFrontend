@@ -2,7 +2,6 @@ import { useQuery } from "@tanstack/react-query";
 
 import { getAllUser } from "../../../api/users";
 import { STALE_TIME } from "../../../constants/common";
-import type { UserType } from "../../../types/users";
 
 const useGetUsers = () => {
     const query = useQuery({

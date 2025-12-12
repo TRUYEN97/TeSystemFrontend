@@ -2,11 +2,11 @@ import { useMutation } from "@tanstack/react-query";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
-import { login } from "../../../api/auth";
-import type { LoginRequestType } from "../../../types/auth";
-import { ROUTE } from "../../../constants/routes";
-import { STORAGE_TOKEN } from "../../../constants/token";
-import { storeToken } from "../../../utils/token";
+import { login } from "../../../../api/auth";
+import type { LoginRequestType } from "../../../../types/auth";
+import { ROUTE } from "../../../../constants/routes";
+import { STORAGE_TOKEN } from "../../../../constants/token";
+import { storeToken } from "../../../../utils/token";
 
 const useLogin = () => {
     const navigate = useNavigate();
