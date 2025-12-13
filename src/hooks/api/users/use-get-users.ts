@@ -8,7 +8,7 @@ const useGetUsers = () => {
         queryFn: async () => {
             return await getAllUser()
         },
-        staleTime: 30_000,
+        staleTime: 0,
     })
 
     return query;

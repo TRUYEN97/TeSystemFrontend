@@ -13,7 +13,7 @@ const useUpdateUser = () => {
             return await updateUser(id, data);
         },
         onSuccess: async (user) => {
-            queryClient.setQueryData(['user_by_id'], (oldData: AxiosResponse) => {
+            queryClient.setQueryData([`user_id_${user.data.data.id}`], (oldData: AxiosResponse) => {
                 const newData = {
                     ...oldData,
                     ...user
