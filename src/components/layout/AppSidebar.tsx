@@ -25,21 +25,11 @@ const navItems: NavItem[] = [
     name: "Dashboard",
     subItems: [{ name: "Ecommerce", path: "/", pro: false }],
   },
-  // {
-  //   icon: <FiCalendar />,
-  //   name: "Calendar",
-  //   path: "/calendar",
-  // },
   {
     icon: <LuUsers />,
     name: "Users",
     path: "/users",
   },
-  // {
-  //   name: "Forms",
-  //   icon: <FaWpforms />,
-  //   subItems: [{ name: "Form Elements", path: "/form-elements", pro: false }],
-  // },
 ];
 
 const AppSidebar: React.FC = () => {

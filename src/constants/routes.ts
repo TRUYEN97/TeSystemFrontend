@@ -2,5 +2,7 @@ export enum ROUTE {
     LOGIN = "/login",
     SIGNUP = "/signup",
 
-    HOME = "/"
+    HOME = "/",
+
+    NOT_FOUND = "/not-found"
 }
