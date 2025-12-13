@@ -1,8 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 
 import { getAllUser } from "../../../api/users";
-import { STALE_TIME } from "../../../constants/common";
-import type { UserType } from "../../../types/users";
 
 const useGetUsers = () => {
     const query = useQuery({
@@ -10,7 +8,7 @@ const useGetUsers = () => {
         queryFn: async () => {
             return await getAllUser()
         },
-        staleTime: STALE_TIME,
+        staleTime: 0,
     })
 
     return query;

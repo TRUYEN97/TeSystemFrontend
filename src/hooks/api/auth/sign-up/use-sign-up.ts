@@ -3,9 +3,9 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-import { register } from "../../../api/auth";
-import type { SignUpRequestType } from "../../../types/auth";
-import { ROUTE } from "../../../constants/routes";
+import { register } from "../../../../api/auth";
+import type { SignUpRequestType } from "../../../../types/auth";
+import { ROUTE } from "../../../../constants/routes";
 
 const useSignUp = () => {
     const navigate = useNavigate();

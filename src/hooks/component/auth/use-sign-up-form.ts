@@ -1,7 +1,7 @@
 import { useState, type ChangeEvent, type FormEvent } from "react";
 
 import type { SignUpInputErrorType, SignUpInputType, SignUpRequestType } from "../../../types/auth";
-import useSignUp from "../../api/sign-up/use-sign-up";
+import useSignUp from "../../api/auth/sign-up/use-sign-up";
 
 const useSignUpForm = () => {
     const register = useSignUp();

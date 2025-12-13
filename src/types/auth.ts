@@ -35,3 +35,7 @@ export type LoginRequestType = {
   username: string;
   password: string;
 }
+
+export type LogoutRequestType = {
+  refreshToken: string;
+}

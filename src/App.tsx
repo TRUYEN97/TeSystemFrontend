@@ -6,7 +6,9 @@ import AppLayout from "./layout/AppLayout";
 import Login from "./pages/AuthPages/Login";
 import SignUp from "./pages/AuthPages/SignUp";
 import Home from "./pages/Dashboard/Home";
-import UsersPage from "./pages/User";
+import UsersPage from "./pages/User/Users";
+import UserPage from "./pages/User/User";
+import NotFound from "./pages/NotFound";
 
 function App() {
   const [queryClient] = useState(() => new QueryClient());
@@ -20,8 +22,11 @@ function App() {
 
           <Route element={<AppLayout />}>
             <Route index path="/" element={<Home />} />
-            <Route index path="/users" element={<UsersPage />} />
+            <Route path="/users" element={<UsersPage />} />
+            <Route path="/users/:id" element={<UserPage />} />
           </Route>
+
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </QueryClientProvider>

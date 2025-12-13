@@ -1,7 +1,7 @@
 import { useState, type ChangeEvent, type FormEvent } from "react";
 
 import type { LoginInputErrorType, LoginInputType, LoginRequestType } from "../../../types/auth";
-import useLogin from "../../api/login/use-login";
+import useLogin from "../../api/auth/login/use-login";
 
 const useLoginForm = () => {
     const login = useLogin()
