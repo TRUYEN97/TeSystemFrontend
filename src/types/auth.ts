@@ -15,27 +15,27 @@ export type SignUpInputErrorType = {
 };
 
 export type SignUpRequestType = {
-    name: string;
-    username: string;
-    email: string;
-    password: string;
-}
+  name: string;
+  username: string;
+  email: string;
+  password: string;
+};
 
 export type LoginInputType = {
   username?: string;
   password?: string;
-}
+};
 
 export type LoginInputErrorType = {
   username?: string;
   password?: string;
-}
+};
 
 export type LoginRequestType = {
   username: string;
   password: string;
-}
+};
 
 export type LogoutRequestType = {
   refreshToken: string;
-}
+};

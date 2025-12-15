@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { IoPersonSharp } from "react-icons/io5";
 
-
 import Dropdown from "../drop-down/DropDown";
 import { ROUTE } from "../../../constants/routes";
 import { clearToken, getRefreshToken } from "../../../utils/token";
@@ -26,10 +25,10 @@ const UserDropdown = () => {
     const refreshToken = getRefreshToken();
     if (!refreshToken) return;
     await logoutMutation.mutate({
-      refreshToken
-    })
+      refreshToken,
+    });
     clearToken();
-  }
+  };
 
   return (
     <div className="relative">
@@ -38,7 +37,7 @@ const UserDropdown = () => {
         className="flex items-center text-gray-700 dropdown-toggle dark:text-gray-400"
       >
         <span className="overflow-hidden rounded-full h-9 w-9">
-          <IoPersonSharp size={32}/>
+          <IoPersonSharp size={32} />
         </span>
 
         <span className="block mr-1 font-medium text-theme-sm"></span>

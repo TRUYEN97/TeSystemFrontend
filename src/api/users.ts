@@ -6,9 +6,9 @@ export const getAllUser = async () => {
 };
 
 export const getUserById = async (id: string | number) => {
-  return await axiosClient.get(`/api/users/${id}`)
-}
+  return await axiosClient.get(`/api/users/${id}`);
+};
 
 export const updateUser = async (id: string | number, data: UserUpdateData) => {
-  return await axiosClient.put(`/api/users/${id}`, data)
-}
+  return await axiosClient.put(`/api/users/${id}`, data);
+};

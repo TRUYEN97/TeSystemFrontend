@@ -15,4 +15,4 @@ export const storeToken = (key: STORAGE_TOKEN, token: string) => {
 export const clearToken = () => {
   localStorage.removeItem(STORAGE_TOKEN.ACCESS_TOKEN);
   localStorage.removeItem(STORAGE_TOKEN.REFRESH_TOKEN);
-}
+};

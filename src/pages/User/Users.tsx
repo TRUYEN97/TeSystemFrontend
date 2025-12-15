@@ -1,42 +1,47 @@
-import {Table, Tag } from 'antd';
-import type { TableProps } from 'antd';
-import { Link } from 'react-router-dom';
+import { Table, Tag } from "antd";
+import type { TableProps } from "antd";
+import { Link } from "react-router-dom";
 
-import type { UserType } from '../../types/users';
-import useGetUsers from '../../hooks/api/users/use-get-users';
+import type { UserType } from "../../types/users";
+import useGetUsers from "../../hooks/api/users/use-get-users";
 
-const columns: TableProps<UserType>['columns'] = [
+const columns: TableProps<UserType>["columns"] = [
   {
-    title: 'Id',
-    dataIndex: 'id',
-    key: 'id'
+    title: "Id",
+    dataIndex: "id",
+    key: "id",
   },
   {
-    title: 'Name',
-    dataIndex: 'name',
-    key: 'name',
-    render: (_, record) => <Link to={`/users/${record.id}`}>{record.name}</Link>
+    title: "Name",
+    dataIndex: "name",
+    key: "name",
+    render: (_, record) => (
+      <Link to={`/users/${record.id}`}>{record.name}</Link>
+    ),
   },
   {
-    title: 'Email',
-    dataIndex: 'email',
-    key: 'email',
+    title: "Email",
+    dataIndex: "email",
+    key: "email",
   },
   {
     title: "Teams",
-    key: 'teams',
-    render: (_, record) => (
+    key: "teams",
+    render: (_, record) =>
       record.teams?.map((team) => (
-        <Tag color='blue-inverse' variant='outlined'>{team.name}</Tag>
-      ))
-    )
-  }
+        <span className="mx-1">
+          <Tag color="blue-inverse" variant="outlined">
+            {team.name}
+          </Tag>
+        </span>
+      )),
+  },
 ];
 
 const UsersPage = () => {
   const { data: users } = useGetUsers();
 
-  return <Table<UserType> columns={columns} dataSource={users?.data.data} />
-}
+  return <Table<UserType> columns={columns} dataSource={users?.data.data} />;
+};
 
 export default UsersPage;

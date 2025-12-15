@@ -9,7 +9,6 @@ import { FiCalendar } from "react-icons/fi";
 import { IoEllipsisHorizontalSharp } from "react-icons/io5";
 import { LuUsers } from "react-icons/lu";
 
-
 import { useSidebar } from "../../hooks/use-sidebar";
 
 type NavItem = {

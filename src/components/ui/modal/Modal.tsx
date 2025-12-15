@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, type RefObject } from "react";
 
 interface ModalProps {
   isOpen: boolean;
