@@ -1,15 +1,14 @@
-import { useRef, useState, type ChangeEvent } from "react";
+import { ToastContainer } from "react-toastify";
 
 import { Modal } from "../ui/modal/Modal";
 import Input from "../form/input/InputField";
 import Label from "../form/Label";
 import Button from "../ui/button/Button";
-import useUpdateUser from "../../hooks/api/users/use-update-user";
 import type { UserType } from "../../types/users";
-import { toast, ToastContainer } from "react-toastify";
 import MultiSelect from "../form/MultiSelelect";
 import useGetTeams from "../../hooks/api/teams/use-get-teams";
 import type { TeamType } from "../../types/users";
+import useModalUpdateUser from "../../hooks/pages/users/use-modal-update-user";
 
 type Props = {
   user: UserType;
@@ -17,56 +16,14 @@ type Props = {
   closeModal: () => void;
 };
 
-type UserInputData = {
-  name?: string;
-  email?: string;
-  teams?: TeamType[];
-};
-
 const ModalUpdateUser = ({ user, isOpen, closeModal }: Props) => {
-  const updateMutation = useUpdateUser();
-  const { data: teams } = useGetTeams();
-
-  const [inputData, setInputData] = useState<UserInputData>({
-    name: user.name,
-    email: user.email,
-    teams: user.teams,
-  });
-
-  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target;
-    setInputData((prev) => {
-      return {
-        ...prev,
-        [name]: value,
-      };
-    });
-  };
-
-  const verifyData = () => {
-    if (!inputData?.name || !inputData.email) {
-      toast("Không để trống dữ liệu!", { type: "error" });
-      return false;
-    }
-    if (inputData.name === user.name && inputData.email === user.email) {
-      toast("Không thay đổi dữ liêu nào!", { type: "warning" });
-      return false;
-    }
-    return true;
-  };
-
-  const handleSave = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    e.preventDefault();
-
-    if (!verifyData()) return;
-
-    const data = {
-      name: inputData?.name || "",
-      email: inputData?.email || "",
-    };
-    updateMutation.mutate({ id: user.id, data });
-    closeModal();
-  };
+  const {
+    inputData, 
+    setInputData,
+    handleInputChange,
+    handleSave,
+    teams
+  } = useModalUpdateUser(user, closeModal)
 
   return (
     <Modal isOpen={isOpen} onClose={closeModal} className="max-w-[700px] m-4">
@@ -108,14 +65,20 @@ const ModalUpdateUser = ({ user, isOpen, closeModal }: Props) => {
                 <div className="col-span-2 lg:col-span-full">
                   <MultiSelect
                     label="Teams"
-                    defaultSelected={inputData.teams?.map((team: TeamType) => {
-                      return team.id;
+                    defaultSelected={inputData.teams?.map((id) => {
+                      return id;
                     })}
-                    options={teams?.data.data.map((team: TeamType) => {
+                    options={teams?.map((team: TeamType) => {
                       return {
                         value: team.id,
                         text: team.name,
                       };
+                    })}
+                    onChange={(teamids) => setInputData(prev => {
+                      return {
+                        ...prev,
+                        teams: teamids.map((id) => Number.parseInt(id as string))
+                      }
                     })}
                   />
                 </div>

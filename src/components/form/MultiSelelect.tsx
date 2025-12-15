@@ -2,7 +2,7 @@ import type React from "react";
 import { useState, useEffect, useRef, type RefObject } from "react";
 
 interface Option {
-  value: string;
+  value: string | number;
   text: string;
 }
 

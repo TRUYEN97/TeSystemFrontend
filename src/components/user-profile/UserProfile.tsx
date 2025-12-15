@@ -20,17 +20,6 @@ const UserInfoCard = ({ user }: Props) => {
           </h4>
 
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-7 2xl:gap-x-32">
-            <div className="mb-2 col-span-full">
-              <div>
-                <p className="mb-2 text-xs leading-normal text-gray-500 dark:text-gray-400">
-                  Id
-                </p>
-                <p className="text-base font-medium text-gray-800 dark:text-white/90">
-                  {user?.id}
-                </p>
-              </div>
-            </div>
-
             <div>
               <p className="mb-2 text-xs leading-normal text-gray-500 dark:text-gray-400">
                 Họ và tên
