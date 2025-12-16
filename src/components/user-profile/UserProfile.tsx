@@ -43,7 +43,7 @@ const UserInfoCard = ({ user }: Props) => {
                 Teams
               </p>
               <p className="text-base font-medium text-gray-800 dark:text-white/90">
-                {user.teams?.map((team) => {
+                {user?.teams?.map((team) => {
                   return (
                     <span className="mx-1">
                       <Tag color="blue-inverse" variant="outlined">

@@ -17,6 +17,7 @@ const useGetUserById = (id?: string) => {
       return await getUserById(id);
     },
     staleTime: 0,
+    retry: 1,
   });
 
   return query;

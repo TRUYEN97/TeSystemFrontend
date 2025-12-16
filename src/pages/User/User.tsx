@@ -1,14 +1,20 @@
 import UserInfoCard from "../../components/user-profile/UserProfile";
 import PageMeta from "../../components/common/PageMeta";
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import useGetUserById from "../../hooks/api/users/use-get-user-by-id";
+import { ROUTE } from "../../constants/routes";
+import Loading from "../../components/ui/effect/Loading";
 
 const UserProfiles = () => {
   const { id } = useParams();
 
-  const { data: user, isLoading } = useGetUserById(id);
+  const { data: user, isLoading, isError } = useGetUserById(id);
 
-  if (isLoading) return <>Loading...</>;
+  if (isLoading) return <Loading />;
+
+  if(isError) {
+    return <Navigate to={ROUTE.NOT_FOUND} replace />
+  }
 
   return (
     <>
