@@ -17,13 +17,8 @@ type Props = {
 };
 
 const ModalUpdateUser = ({ user, isOpen, closeModal }: Props) => {
-  const {
-    inputData, 
-    setInputData,
-    handleInputChange,
-    handleSave,
-    teams
-  } = useModalUpdateUser(user, closeModal)
+  const { inputData, setInputData, handleInputChange, handleSave, teams } =
+    useModalUpdateUser(user, closeModal);
 
   return (
     <Modal isOpen={isOpen} onClose={closeModal} className="max-w-[700px] m-4">
@@ -38,7 +33,7 @@ const ModalUpdateUser = ({ user, isOpen, closeModal }: Props) => {
           <div className="custom-scrollbar overflow-y-auto px-2 pb-3">
             <div className="mt-7">
               <h5 className="mb-5 text-lg font-medium text-gray-800 dark:text-white/90 lg:mb-6">
-                Thông tin cá nhân       
+                Thông tin cá nhân
               </h5>
 
               <div className="grid grid-cols-1 gap-x-6 gap-y-5 lg:grid-cols-2 pb-20">
@@ -74,12 +69,16 @@ const ModalUpdateUser = ({ user, isOpen, closeModal }: Props) => {
                         text: team.name,
                       };
                     })}
-                    onChange={(teamids) => setInputData(prev => {
-                      return {
-                        ...prev,
-                        teams: teamids.map((id) => Number.parseInt(id as string))
-                      }
-                    })}
+                    onChange={(teamids) =>
+                      setInputData((prev) => {
+                        return {
+                          ...prev,
+                          teams: teamids.map((id) =>
+                            Number.parseInt(id as string),
+                          ),
+                        };
+                      })
+                    }
                   />
                 </div>
               </div>

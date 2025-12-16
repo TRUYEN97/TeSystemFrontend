@@ -19,4 +19,4 @@ export type UserUpdateData = {
 export type UserTeamRequestType = {
   userId: number;
   teamId: number;
-}
+};

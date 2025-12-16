@@ -14,10 +14,11 @@ export const updateUser = async (id: string | number, data: UserUpdateData) => {
 };
 
 export const addTeamForUser = async (data: UserTeamRequestType) => {
-  return await axiosClient.post('/api/user-teams', data)
-}
+  return await axiosClient.post("/api/user-teams", data);
+};
 
 export const removeTeamFromUser = async (userId: number, teamId: number) => {
-  return await axiosClient.delete(`/api/user-teams/user/${userId}/team/${teamId}`)
-}
-
+  return await axiosClient.delete(
+    `/api/user-teams/user/${userId}/team/${teamId}`,
+  );
+};
