@@ -6,7 +6,6 @@ import Label from "../form/Label";
 import Button from "../ui/button/Button";
 import type { UserType } from "../../types/users";
 import MultiSelect from "../form/MultiSelelect";
-import useGetTeams from "../../hooks/api/teams/use-get-teams";
 import type { TeamType } from "../../types/users";
 import useModalUpdateUser from "../../hooks/pages/users/use-modal-update-user";
 

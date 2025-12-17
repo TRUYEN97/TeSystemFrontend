@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
@@ -7,7 +6,6 @@ import { LuEyeOff } from "react-icons/lu";
 
 import Label from "../form/Label";
 import Input from "../form/input/InputField";
-import Checkbox from "../form/input/CheckBox";
 import Button from "../ui/button/Button";
 import { ROUTE } from "../../constants/routes";
 import useLoginForm from "../../hooks/component/auth/use-login-form";

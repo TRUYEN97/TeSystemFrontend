@@ -12,7 +12,7 @@ const LayoutContent: React.FC = () => {
 
   return (
     <>
-      <ToastContainer />
+      <ToastContainer autoClose={1000} />
       <div className="min-h-screen xl:flex">
         <div>
           <AppSidebar />

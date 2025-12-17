@@ -7,6 +7,7 @@ import useGetUsers from "../../hooks/api/users/use-get-users";
 import Button from "../../components/ui/button/Button";
 import { ROUTE } from "../../constants/routes";
 import Loading from "../../components/ui/effect/Loading";
+import { useState } from "react";
 
 const columns: TableProps<UserType>["columns"] = [
   {
@@ -44,18 +45,25 @@ const columns: TableProps<UserType>["columns"] = [
 const UsersPage = () => {
   const { data: users, isLoading } = useGetUsers();
 
-  if(isLoading) {
-    return <Loading />
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pageSize, setPageSize] = useState(15);
+
+  if (isLoading) {
+    return <Loading />;
   }
 
   return (
     <div>
       <div className="pb-4">
-        <Link to={ROUTE.CREATE_NEW_USER}>
+        <Link to={ROUTE.NEW_USER}>
           <Button className="px-8">Thêm người dùng</Button>
         </Link>
       </div>
-      <Table<UserType> columns={columns} dataSource={users?.data.data} />
+      <Table<UserType>
+        columns={columns}
+        dataSource={users?.data.data}
+        pagination={{ pageSize: pageSize }}
+      />
     </div>
   );
 };

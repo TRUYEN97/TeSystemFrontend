@@ -6,7 +6,7 @@ export enum ROUTE {
 
   USERS = "/users",
   USER_ID = "/users/:id",
-  CREATE_NEW_USER = '/users/create',
+  NEW_USER = "/users/new",
 
   NOT_FOUND = "/not-found",
 }

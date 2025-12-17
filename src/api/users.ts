@@ -1,4 +1,8 @@
-import type { UserTeamRequestType, UserUpdateData } from "../types/users";
+import type {
+  NewUserRequestType,
+  UserTeamRequestType,
+  UserUpdateData,
+} from "../types/users";
 import { axiosClient } from "./services/axios-client";
 
 export const getAllUser = async () => {
@@ -21,4 +25,12 @@ export const removeTeamFromUser = async (userId: number, teamId: number) => {
   return await axiosClient.delete(
     `/api/user-teams/user/${userId}/team/${teamId}`,
   );
+};
+
+export const createNewUser = async (data: NewUserRequestType) => {
+  return await axiosClient.post("/api/users", data);
+};
+
+export const removeUser = async (id: number | string) => {
+  return await axiosClient.delete(`/api/users/${id}`);
 };

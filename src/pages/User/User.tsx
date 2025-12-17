@@ -12,8 +12,8 @@ const UserProfiles = () => {
 
   if (isLoading) return <Loading />;
 
-  if(isError) {
-    return <Navigate to={ROUTE.NOT_FOUND} replace />
+  if (isError) {
+    return <Navigate to={ROUTE.NOT_FOUND} replace />;
   }
 
   return (
