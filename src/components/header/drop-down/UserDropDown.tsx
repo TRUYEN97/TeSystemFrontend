@@ -6,10 +6,13 @@ import Dropdown from "../drop-down/DropDown";
 import { ROUTE } from "../../../constants/routes";
 import { clearToken, getRefreshToken } from "../../../utils/token";
 import useLogout from "../../../hooks/api/auth/use-logout";
+import useAuth from "../../../hooks/use-auth";
 
 const UserDropdown = () => {
   const navigate = useNavigate();
   const logoutMutation = useLogout();
+  const { setIsLoggedIn } = useAuth(); 
+
   const [isOpen, setIsOpen] = useState(false);
 
   function toggleDropdown() {
@@ -21,13 +24,14 @@ const UserDropdown = () => {
   }
 
   const handleLogOut = async () => {
-    navigate(ROUTE.LOGIN);
     const refreshToken = getRefreshToken();
     if (!refreshToken) return;
     await logoutMutation.mutate({
       refreshToken,
     });
     clearToken();
+    setIsLoggedIn(false);
+    navigate(ROUTE.LOGIN);
   };
 
   return (

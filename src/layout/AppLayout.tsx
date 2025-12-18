@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 
 import { SidebarProvider } from "../contexts/SidebarContext";
 import { useSidebar } from "../hooks/use-sidebar";
@@ -6,6 +6,8 @@ import AppSidebar from "../components/layout/AppSidebar";
 import Backdrop from "../components/layout/BackDrop";
 import AppHeader from "../components/layout/AppHeader";
 import { ToastContainer } from "react-toastify";
+import useAuth from "../hooks/use-auth";
+import { ROUTE } from "../constants/routes";
 
 const LayoutContent: React.FC = () => {
   const { isExpanded, isHovered, isMobileOpen } = useSidebar();
@@ -34,9 +36,11 @@ const LayoutContent: React.FC = () => {
 };
 
 const AppLayout: React.FC = () => {
+    const { isLoggedIn } = useAuth();
+
   return (
     <SidebarProvider>
-      <LayoutContent />
+      {isLoggedIn ? <LayoutContent /> : <Navigate to={ROUTE.LOGIN} replace/>}
     </SidebarProvider>
   );
 };

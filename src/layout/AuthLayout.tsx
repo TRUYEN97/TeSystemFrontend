@@ -3,12 +3,19 @@ import React from "react";
 import GridShape from "../components/common/GridShape";
 import ThemeTogglerTwo from "../components/common/ThemeToggler";
 import { ToastContainer } from "react-toastify";
+import useAuth from "../hooks/use-auth";
+import { Navigate } from "react-router-dom";
+import { ROUTE } from "../constants/routes";
 
 export default function AuthLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const {isLoggedIn} = useAuth();
+
+  if(isLoggedIn) return <Navigate to={ROUTE.HOME} replace />
+
   return (
     <>
       <ToastContainer />

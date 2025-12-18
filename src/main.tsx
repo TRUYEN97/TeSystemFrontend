@@ -7,12 +7,15 @@ import { ThemeProvider } from "./contexts/ThemeContext.tsx";
 
 import "./index.css";
 import "./i18n.ts";
+import AuthProvider from "./contexts/AuthContext.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ThemeProvider>
       <AppWrapper>
-        <App />
+        <AuthProvider>
+          <App />
+        </AuthProvider>
       </AppWrapper>
     </ThemeProvider>
   </StrictMode>,
