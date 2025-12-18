@@ -3,7 +3,7 @@ import axios, { AxiosError, type InternalAxiosRequestConfig } from "axios";
 import { getAccessToken } from "../../utils/token";
 
 export const axiosClient = axios.create({
-  baseURL: "https://localhost:7201/",
+  baseURL: import.meta.env.VITE_API_URL,
   headers: {
     Accept: "application/json, text/plain, */*",
   },
