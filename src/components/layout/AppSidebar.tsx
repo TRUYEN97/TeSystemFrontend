@@ -1,11 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-import { GoPerson } from "react-icons/go";
-import { FaWpforms } from "react-icons/fa";
 import { LuAppWindowMac } from "react-icons/lu";
 import { IoChevronDown } from "react-icons/io5";
-import { FiCalendar } from "react-icons/fi";
+import { GrGroup } from "react-icons/gr";
 import { IoEllipsisHorizontalSharp } from "react-icons/io5";
 import { LuUsers } from "react-icons/lu";
 
@@ -28,6 +26,11 @@ const navItems: NavItem[] = [
     icon: <LuUsers />,
     name: "Users",
     path: "/users",
+  },
+  {
+    icon: <GrGroup />,
+    name: "Teams",
+    path: "/teams",
   },
 ];
 

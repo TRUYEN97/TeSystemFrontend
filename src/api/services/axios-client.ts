@@ -24,7 +24,8 @@ axiosClient.interceptors.response.use(
   (error: AxiosError) => {
     if(error.response?.status === 401) {
       clearToken();
+      return Promise.reject(error);
     }
-    return error;
+    return Promise.reject(error);
   }
 )
