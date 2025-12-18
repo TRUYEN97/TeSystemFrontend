@@ -81,10 +81,12 @@ src/
 ├── assets/        # Static assets
 ├── components/    # Reusable components
 ├── api/           # api services 
+├── contexts/      # 
 ├── hooks/         # Custom hook 
 ├── layout/        # Layouts for specific pages
 ├── locales/       # Lanagues folder
 ├── types/         # Types 
+├── constants/     #   
 ├── utils/         # utilities 
 ├── pages/         # Page-level components
 ├── styles/        # Global styles

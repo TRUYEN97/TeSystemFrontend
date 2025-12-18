@@ -1,6 +1,6 @@
-import axios, { AxiosError, type InternalAxiosRequestConfig } from "axios";
+import axios, { AxiosError, type AxiosResponse, type InternalAxiosRequestConfig } from "axios";
 
-import { getAccessToken } from "../../utils/token";
+import { clearToken, getAccessToken } from "../../utils/token";
 
 export const axiosClient = axios.create({
   baseURL: import.meta.env.VITE_API_URL,
@@ -16,8 +16,15 @@ axiosClient.interceptors.request.use(
       config.headers.Authorization = `Bearer ${accessToken}`;
     }
     return config;
-  },
-  (error: AxiosError) => {
-    return Promise.reject(error);
-  },
+  }
 );
+
+axiosClient.interceptors.response.use(
+  (response: AxiosResponse) => {return response},
+  (error: AxiosError) => {
+    if(error.response?.status === 401) {
+      clearToken();
+    }
+    return error;
+  }
+)

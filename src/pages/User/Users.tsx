@@ -39,6 +39,7 @@ const columns: TableProps<UserType>["columns"] = [
           </Tag>
         </span>
       )),
+    responsive: ['md']
   },
 ];
 

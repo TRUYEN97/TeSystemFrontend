@@ -13,6 +13,8 @@ const AuthProvider = ({children} : {children: ReactNode}) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
+    // const  getAccessToken 
+
     setIsLoggedIn(getAccessToken() ? true : false)
   }, [])
 
