@@ -1,5 +1,3 @@
-import useGetProducts from "../../hooks/api/products/use-get-products";
-
 export interface Product {
   id: number;
   title: string;
@@ -10,9 +8,7 @@ export interface Product {
 }
 
 const Home = () => {
-  return <div>
-    Home page
-  </div>
+  return <div>Home page</div>;
 };
 
 export default Home;

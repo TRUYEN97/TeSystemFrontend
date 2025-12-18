@@ -1,6 +1,12 @@
 export enum ROUTE {
-    LOGIN = "/login",
-    SIGNUP = "/signup",
+  LOGIN = "/login",
+  SIGNUP = "/signup",
 
-    HOME = "/"
+  HOME = "/",
+
+  USERS = "/users",
+  USER_ID = "/users/:id",
+  NEW_USER = "/users/new",
+
+  NOT_FOUND = "/not-found",
 }

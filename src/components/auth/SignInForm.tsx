@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
@@ -7,7 +6,6 @@ import { LuEyeOff } from "react-icons/lu";
 
 import Label from "../form/Label";
 import Input from "../form/input/InputField";
-import Checkbox from "../form/input/CheckBox";
 import Button from "../ui/button/Button";
 import { ROUTE } from "../../constants/routes";
 import useLoginForm from "../../hooks/component/auth/use-login-form";
@@ -22,7 +20,7 @@ const SignInForm = () => {
     loginInput,
     loginInputError,
     handleInputChange,
-    handleSubmit
+    handleSubmit,
   } = useLoginForm();
 
   return (
@@ -51,7 +49,11 @@ const SignInForm = () => {
                     value={loginInput?.username}
                     onChange={handleInputChange}
                     error={checkInputFieldHasError(loginInputError?.username)}
-                    hint={checkInputFieldHasError(loginInputError?.username) ? t(`${loginInputError?.username}`) : undefined}
+                    hint={
+                      checkInputFieldHasError(loginInputError?.username)
+                        ? t(`${loginInputError?.username}`)
+                        : undefined
+                    }
                   />
                 </div>
                 <div>
@@ -67,7 +69,11 @@ const SignInForm = () => {
                       value={loginInput?.password}
                       onChange={handleInputChange}
                       error={checkInputFieldHasError(loginInputError?.password)}
-                      hint={checkInputFieldHasError(loginInputError?.password) ? t(`${loginInputError?.password}`) : undefined}
+                      hint={
+                        checkInputFieldHasError(loginInputError?.password)
+                          ? t(`${loginInputError?.password}`)
+                          : undefined
+                      }
                     />
                     <span
                       onClick={() => setShowPassword(!showPassword)}
@@ -96,9 +102,7 @@ const SignInForm = () => {
                   </Link> */}
                 </div>
                 <div>
-                  <Button className="w-full" size="sm"
-                    onClick={handleSubmit}
-                  >
+                  <Button className="w-full" size="sm" onClick={handleSubmit}>
                     {t("log_in_page.sign_in_button")}
                   </Button>
                 </div>

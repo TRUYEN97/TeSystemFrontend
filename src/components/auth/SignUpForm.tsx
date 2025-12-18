@@ -10,7 +10,6 @@ import Checkbox from "../form/input/CheckBox";
 import { checkInputFieldHasError } from "../../utils/auth";
 import { ROUTE } from "../../constants/routes";
 
-
 const SignUpForm = () => {
   const { t } = useTranslation();
   const {
@@ -57,7 +56,11 @@ const SignUpForm = () => {
                     value={signUpInputData?.fullname}
                     onChange={handleChangeInputData}
                     error={checkInputFieldHasError(signUpInputError?.fullname)}
-                    hint={checkInputFieldHasError(signUpInputError?.fullname) ? t(`${signUpInputError?.fullname}`) : undefined}
+                    hint={
+                      checkInputFieldHasError(signUpInputError?.fullname)
+                        ? t(`${signUpInputError?.fullname}`)
+                        : undefined
+                    }
                   />
                 </div>
 
@@ -74,7 +77,11 @@ const SignUpForm = () => {
                     value={signUpInputData?.username}
                     onChange={handleChangeInputData}
                     error={checkInputFieldHasError(signUpInputError?.username)}
-                    hint={checkInputFieldHasError(signUpInputError?.username) ? t(`${signUpInputError?.username}`) : undefined}
+                    hint={
+                      checkInputFieldHasError(signUpInputError?.username)
+                        ? t(`${signUpInputError?.username}`)
+                        : undefined
+                    }
                   />
                 </div>
 
@@ -90,8 +97,14 @@ const SignUpForm = () => {
                       type={showPassword ? "text" : "password"}
                       value={signUpInputData?.password}
                       onChange={handleChangeInputData}
-                      error={checkInputFieldHasError(signUpInputError?.password)}
-                      hint={checkInputFieldHasError(signUpInputError?.password) ? t(`${signUpInputError?.password}`) : undefined}
+                      error={checkInputFieldHasError(
+                        signUpInputError?.password,
+                      )}
+                      hint={
+                        checkInputFieldHasError(signUpInputError?.password)
+                          ? t(`${signUpInputError?.password}`)
+                          : undefined
+                      }
                     />
                     <span
                       onClick={() => setShowPassword(!showPassword)}
@@ -120,8 +133,16 @@ const SignUpForm = () => {
                       type={showPassword ? "text" : "password"}
                       value={signUpInputData?.confirmPassword}
                       onChange={handleChangeInputData}
-                      error={checkInputFieldHasError(signUpInputError?.confirmPassword)}
-                      hint={checkInputFieldHasError(signUpInputError?.confirmPassword) ? t(`${signUpInputError?.confirmPassword}`) : undefined}
+                      error={checkInputFieldHasError(
+                        signUpInputError?.confirmPassword,
+                      )}
+                      hint={
+                        checkInputFieldHasError(
+                          signUpInputError?.confirmPassword,
+                        )
+                          ? t(`${signUpInputError?.confirmPassword}`)
+                          : undefined
+                      }
                     />
                     <span
                       onClick={() => setShowPassword(!showPassword)}
@@ -150,8 +171,9 @@ const SignUpForm = () => {
                 </div>
 
                 <div>
-                  <button className="flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-white transition rounded-lg bg-brand-500 shadow-theme-xs hover:bg-brand-600"
-                    onClick={e => handleSubmitRegister(e)}
+                  <button
+                    className="flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-white transition rounded-lg bg-brand-500 shadow-theme-xs hover:bg-brand-600"
+                    onClick={(e) => handleSubmitRegister(e)}
                   >
                     {t("sign_up_page.sign_up_button")}
                   </button>

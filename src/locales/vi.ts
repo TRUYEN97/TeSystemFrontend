@@ -41,11 +41,12 @@ const vi = {
         empty_username: "Nhập tài khoản đăng nhập!",
         empty_password: "Nhập mật khẩu!",
         empty_confirm_password: "Nhập xác nhận mật khẩu!",
-        password_and_confirm_not_match: "Mật khẩu và xác nhận không giống nhau!"
+        password_and_confirm_not_match:
+          "Mật khẩu và xác nhận không giống nhau!",
       },
       message: {
-        success: "Đăng ký tài khoản thành công"
-      }
+        success: "Đăng ký tài khoản thành công",
+      },
     },
   },
 };
