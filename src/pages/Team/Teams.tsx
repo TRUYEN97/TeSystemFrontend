@@ -2,7 +2,6 @@ import { Table} from "antd";
 import type { TableProps } from "antd";
 import { Link } from "react-router-dom";
 
-import useGetUsers from "../../hooks/api/users/use-get-users";
 import Button from "../../components/ui/button/Button";
 import { ROUTE } from "../../constants/routes";
 import Loading from "../../components/ui/effect/Loading";

@@ -12,6 +12,7 @@ import NotFound from "./pages/NotFound";
 import { ROUTE } from "./constants/routes";
 import NewUserPage from "./pages/User/NewUser";
 import TeamsPage from "./pages/Team/Teams";
+import NewTeamPage from "./pages/Team/NewTeam";
 
 function App() {
   const [queryClient] = useState(() => new QueryClient());
@@ -31,6 +32,7 @@ function App() {
             <Route path={ROUTE.NEW_USER} element={<NewUserPage />} /> 
 
             <Route path="/teams" element={<TeamsPage />} />
+            <Route path={ROUTE.NEW_TEAM} element={<NewTeamPage />} />
           </Route>
 
           <Route path="*" element={<NotFound />} />

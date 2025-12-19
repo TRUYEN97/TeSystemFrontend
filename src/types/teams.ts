@@ -5,3 +5,8 @@ export interface TeamType {
   name: string;
   memberCount: number;
 }
+
+export type NewTeamRequestType = {
+  name: string;
+  departmentId: number;
+}
