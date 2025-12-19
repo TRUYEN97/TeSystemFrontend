@@ -17,7 +17,7 @@ const columns: TableProps<TeamType>["columns"] = [
     key: "id",
   },
   {
-    title: "Name",
+    title: "Tên",
     dataIndex: "name",
     key: "name",
     render: (_, record) => (
@@ -43,7 +43,7 @@ const TeamsPage = () => {
   return (
     <div>
       <div className="pb-4">
-        <Link to={ROUTE.NEW_USER}>
+        <Link to={ROUTE.NEW_TEAM}>
           <Button className="px-8">Thêm nhóm</Button>
         </Link>
       </div>

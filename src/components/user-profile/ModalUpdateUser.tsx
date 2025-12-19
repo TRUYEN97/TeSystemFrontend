@@ -6,7 +6,7 @@ import Label from "../form/Label";
 import Button from "../ui/button/Button";
 import type { UserType } from "../../types/users";
 import MultiSelect from "../form/MultiSelelect";
-import type { TeamType } from "../../types/users";
+import type { TeamType } from "../../types/teams";
 import useModalUpdateUser from "../../hooks/pages/users/use-modal-update-user";
 
 type Props = {
