@@ -40,4 +40,11 @@ export type LogoutRequestType = {
   refreshToken: string;
 };
 
-export type ErrorResponseType = {response: {data: {message: string}}, message: string}
+export type ErrorResponseType = {
+  response: {
+    data: {
+      message: string
+    }
+  },
+  message: string
+}

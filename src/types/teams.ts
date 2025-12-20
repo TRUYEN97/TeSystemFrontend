@@ -10,3 +10,7 @@ export type NewTeamRequestType = {
   name: string;
   departmentId: number;
 }
+
+export type UpdateTeamRequestType = {
+  name: string;
+}

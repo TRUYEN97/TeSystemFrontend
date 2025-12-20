@@ -4,10 +4,8 @@ import { toast } from "react-toastify";
 import type { UserType } from "../../../types/users";
 import useUpdateUser from "../../api/users/use-update-user";
 import useGetTeams from "../../api/teams/use-get-teams";
-import type { TeamType } from "../../../types/teams";
 import useRemoveTeamFromUser from "../../api/teams/use-remove-team-from-user";
 import useAddTeamForUser from "../../api/teams/use-add-team-for-user";
-import useGetUserById from "../../api/users/use-get-user-by-id";
 
 type UserInputData = {
   name?: string;
