@@ -6,6 +6,7 @@ import { TiPencil } from "react-icons/ti";
 import { useModal } from "../../hooks/component/modal/use-modal";
 import type { TeamType } from "../../types/teams";
 import ModalUpdateTeam from "./ModalUpdateTeam";
+import PopConfirmRemoveTeam from "./PopUpConfirmRemoveTeam";
 
 type Props = {
   team: TeamType;
@@ -16,7 +17,7 @@ const TeamDetail = ({ team }: Props) => {
 
   const [isOpenPopUp, setOpenPopUp] = useState(false);
 
-  const handleClosePopUp = () => {
+  const closePopUp = () => {
     setOpenPopUp(false);
   };
 
@@ -67,13 +68,10 @@ const TeamDetail = ({ team }: Props) => {
         </div>
       </div>
 
-      {/* <PopConfirmRemoveUser
-        user={user}
-        isOpen={isOpenPopUp}
-        closeModal={handleClosePopUp}
-      /> */}
+      <PopConfirmRemoveTeam team={team} isOpen={isOpenPopUp} closeModal={closePopUp} />
+
       <ModalUpdateTeam team={team} isOpen={isOpen} closeModal={closeModal} />
-    </div>
+    </div>  
   );
 };
 

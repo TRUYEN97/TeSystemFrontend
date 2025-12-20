@@ -16,3 +16,7 @@ export const getTeamById = async (id: number | string) => {
 export const updateTeam = async (id: number | string, data: UpdateTeamRequestType) => {
   return await axiosClient.put(`/api/teams/${id}`, data);
 }
+
+export const removeTeam = async (id: number | string) => {
+  return await axiosClient.delete(`/api/teams/${id}`)
+}
