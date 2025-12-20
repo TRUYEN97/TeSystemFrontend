@@ -1,6 +1,5 @@
 # TE Management
 
-
 ````md
 ## 🚀 Tech Stack
 
@@ -20,9 +19,11 @@ Make sure you have the following installed:
 - **Yarn** (latest recommended)
 
 Check versions:
+
 ```bash
 node -v
 yarn -v
+```
 ````
 
 ---
@@ -55,7 +56,6 @@ http://localhost:5173
 
 ---
 
-
 ---
 
 ## 🧪 Linting & Formatting (Optional)
@@ -80,14 +80,14 @@ yarn format
 src/
 ├── assets/        # Static assets
 ├── components/    # Reusable components
-├── api/           # api services 
-├── contexts/      # 
-├── hooks/         # Custom hook 
+├── api/           # api services
+├── contexts/      #
+├── hooks/         # Custom hook
 ├── layout/        # Layouts for specific pages
 ├── locales/       # Lanagues folder
-├── types/         # Types 
-├── constants/     #   
-├── utils/         # utilities 
+├── types/         # Types
+├── constants/     #
+├── utils/         # utilities
 ├── pages/         # Page-level components
 ├── styles/        # Global styles
 ├── App.tsx        # Root component

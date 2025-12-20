@@ -21,10 +21,10 @@ const PopConfirmRemoveT = ({ team, isOpen, closeModal }: Props) => {
   const [inputConfirm, setInputConfirm] = useState<string>();
 
   const handleRemoveTeam = async (
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
   ) => {
     e.preventDefault();
-    if(!inputConfirm || inputConfirm !== 'OK') {
+    if (!inputConfirm || inputConfirm !== "OK") {
       toast.error("Vui lòng xác nhận!", { autoClose: 1000 });
       return;
     }
@@ -37,7 +37,7 @@ const PopConfirmRemoveT = ({ team, isOpen, closeModal }: Props) => {
 
   return (
     <Modal isOpen={isOpen} onClose={closeModal} className="max-w-[700px] m-4">
-      <ToastContainer autoClose={1000}/>
+      <ToastContainer autoClose={1000} />
       <div className="no-scrollbar relative w-full max-w-[700px] overflow-y-auto rounded-3xl bg-white p-4 dark:bg-gray-900 lg:p-11">
         <div className="px-2 pr-14">
           <h4 className="mb-2 text-2xl font-semibold text-gray-800 dark:text-white/90">
@@ -58,18 +58,18 @@ const PopConfirmRemoveT = ({ team, isOpen, closeModal }: Props) => {
                 </div>
               </div>
               <div className="col-span-2 lg:col-span-full">
-                  <Label>
-                    <span className="text-red-500">Nhập OK để xác nhận xóa</span>
-                    <span className="text-error-500">*</span>{" "}
-                  </Label>
-                  <Input
-                    type="text"
-                    name="name"
-                    value={inputConfirm}
-                    onChange={(e) => setInputConfirm(e.target.value)}
-                    error
-                  />
-                </div>
+                <Label>
+                  <span className="text-red-500">Nhập OK để xác nhận xóa</span>
+                  <span className="text-error-500">*</span>{" "}
+                </Label>
+                <Input
+                  type="text"
+                  name="name"
+                  value={inputConfirm}
+                  onChange={(e) => setInputConfirm(e.target.value)}
+                  error
+                />
+              </div>
             </div>
           </div>
           <div className="flex items-center gap-3 px-2 mt-6 lg:justify-end">

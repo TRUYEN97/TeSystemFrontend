@@ -14,31 +14,31 @@ type Props = {
   closeModal: () => void;
 };
 
-type InputDataType= {
-  name?: string
-}
+type InputDataType = {
+  name?: string;
+};
 
 const ModalUpdateTeam = ({ team, isOpen, closeModal }: Props) => {
   const mutation = useUpdateTeam();
 
   const [inputData, setInputData] = useState<InputDataType>({
-    name: team.name 
-  })
+    name: team.name,
+  });
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const {name, value} = event.target
-    setInputData(prev => {
+    const { name, value } = event.target;
+    setInputData((prev) => {
       return {
-        ...prev, 
-        [name]: value
-      }
-    })
-  }
+        ...prev,
+        [name]: value,
+      };
+    });
+  };
 
   const handleSave = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    if(!inputData.name) {
+    if (!inputData.name) {
       toast.error("Không để trống tên");
       return;
     }
@@ -46,11 +46,11 @@ const ModalUpdateTeam = ({ team, isOpen, closeModal }: Props) => {
     mutation.mutate({
       id: team.id,
       data: {
-        name: inputData.name
-      }
-    })
+        name: inputData.name,
+      },
+    });
     closeModal();
-  }
+  };
 
   return (
     <Modal isOpen={isOpen} onClose={closeModal} className="max-w-[700px] m-4">

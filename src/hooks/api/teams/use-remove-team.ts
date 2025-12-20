@@ -1,8 +1,8 @@
-import { useMutation } from "@tanstack/react-query"
+import { useMutation } from "@tanstack/react-query";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
-import { removeTeam } from "../../../api/teams"
+import { removeTeam } from "../../../api/teams";
 import { ROUTE } from "../../../constants/routes";
 import type { ErrorResponseType } from "../../../types/auth";
 
@@ -16,13 +16,13 @@ const useRemoveTeam = () => {
     onSuccess: () => {
       toast.success("Thành công");
       setTimeout(() => {
-        navigate(ROUTE.TEAMS)
-      }, 1000)
+        navigate(ROUTE.TEAMS);
+      }, 1000);
     },
     onError: (error: ErrorResponseType) => {
-      toast.error(error.response.data.message || error.message)
-    }
-  })
-}
+      toast.error(error.response.data.message || error.message);
+    },
+  });
+};
 
 export default useRemoveTeam;

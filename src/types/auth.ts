@@ -43,8 +43,8 @@ export type LogoutRequestType = {
 export type ErrorResponseType = {
   response: {
     data: {
-      message: string
-    }
-  },
-  message: string
-}
+      message: string;
+    };
+  };
+  message: string;
+};

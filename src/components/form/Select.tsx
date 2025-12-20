@@ -25,7 +25,7 @@ const Select: React.FC<SelectProps> = ({
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const value = e.target.value;
     setSelectedValue(value);
-    onChange(value); 
+    onChange(value);
   };
 
   return (

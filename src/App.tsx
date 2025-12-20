@@ -27,10 +27,10 @@ function App() {
 
           <Route element={<AppLayout />}>
             <Route index path={ROUTE.HOME} element={<Home />} />
-            
+
             <Route path={ROUTE.USERS} element={<UsersPage />} />
             <Route path={ROUTE.USER_ID} element={<UserPage />} />
-            <Route path={ROUTE.NEW_USER} element={<NewUserPage />} /> 
+            <Route path={ROUTE.NEW_USER} element={<NewUserPage />} />
 
             <Route path={ROUTE.TEAMS} element={<TeamsPage />} />
             <Route path={ROUTE.NEW_TEAM} element={<NewTeamPage />} />

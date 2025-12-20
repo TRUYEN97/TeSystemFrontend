@@ -38,22 +38,22 @@ const NewTeamPage = () => {
     if (!inputData?.departmentId) {
       throw Error("Phòng ban không được để trống");
     }
-  }
+  };
 
   const handleCreateNewUser = (event: FormEvent<HTMLButtonElement>) => {
     event.preventDefault();
     try {
-      verifyInputData()
+      verifyInputData();
       const data: NewTeamRequestType = {
-        name: inputData?.name || '',
-        departmentId: inputData?.departmentId as number || 0
-      }
-      mutation.mutate(data)
+        name: inputData?.name || "",
+        departmentId: (inputData?.departmentId as number) || 0,
+      };
+      mutation.mutate(data);
     } catch (error) {
       if (error instanceof Error) {
         toast.error(error.message, {
-          autoClose: 3000
-        })
+          autoClose: 3000,
+        });
       }
     }
   };
@@ -91,16 +91,16 @@ const NewTeamPage = () => {
                 <Select
                   options={departments?.data.data.map((de: DepartmentType) => {
                     return {
-                      label: de.name, 
-                      value: de.id
-                    }
+                      label: de.name,
+                      value: de.id,
+                    };
                   })}
                   placeholder="Select Option"
                   onChange={(value) => {
-                     setInputData({
+                    setInputData({
                       name: inputData?.name,
-                      departmentId: value
-                     })
+                      departmentId: value,
+                    });
                   }}
                   className="dark:bg-dark-900"
                 />

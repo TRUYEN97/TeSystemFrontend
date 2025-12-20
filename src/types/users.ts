@@ -5,7 +5,7 @@ export interface UserType {
   name: string;
   email: string;
   teams: TeamType[];
-};
+}
 
 export type UserUpdateData = {
   name: string;

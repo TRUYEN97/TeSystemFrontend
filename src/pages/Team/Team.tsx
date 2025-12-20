@@ -10,7 +10,7 @@ const TeamPage = () => {
   const { id } = useParams();
 
   const { data: team, isLoading, isError } = useGetTeamById(id);
-  
+
   if (isLoading) return <Loading />;
 
   if (isError) {

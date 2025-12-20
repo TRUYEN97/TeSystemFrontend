@@ -1,10 +1,10 @@
-import { useMutation } from "@tanstack/react-query"
+import { useMutation } from "@tanstack/react-query";
 
-import { createNewTeam } from "../../../api/teams"
-import type { NewTeamRequestType } from "../../../types/teams"
-import { toast } from "react-toastify"
-import { useNavigate } from "react-router-dom"
-import type { ErrorResponseType } from "../../../types/auth"
+import { createNewTeam } from "../../../api/teams";
+import type { NewTeamRequestType } from "../../../types/teams";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+import type { ErrorResponseType } from "../../../types/auth";
 
 const useNewTeam = () => {
   const navigate = useNavigate();
@@ -15,14 +15,16 @@ const useNewTeam = () => {
     },
     onSuccess: (response) => {
       toast.success("Tạo mới thành công!");
-      setTimeout(() => {navigate(`/teams/${response?.data.data.id}`)}, 1000)
+      setTimeout(() => {
+        navigate(`/teams/${response?.data.data.id}`);
+      }, 1000);
     },
-    onError: (error: ErrorResponseType ) => {
+    onError: (error: ErrorResponseType) => {
       toast.error(error?.response?.data?.message || error.message, {
-        autoClose: 3000
+        autoClose: 3000,
       });
-    }
-  })
-}
+    },
+  });
+};
 
 export default useNewTeam;

@@ -1,6 +1,6 @@
-import { useQuery } from "@tanstack/react-query"
+import { useQuery } from "@tanstack/react-query";
 
-import { getTeamById } from "../../../api/teams"
+import { getTeamById } from "../../../api/teams";
 
 const useGetTeamById = (id?: string | number) => {
   return useQuery({
@@ -8,8 +8,8 @@ const useGetTeamById = (id?: string | number) => {
     queryFn: async () => {
       return await getTeamById(id as string | number);
     },
-    enabled: !!id
-  })
-}
+    enabled: !!id,
+  });
+};
 
 export default useGetTeamById;

@@ -68,10 +68,14 @@ const TeamDetail = ({ team }: Props) => {
         </div>
       </div>
 
-      <PopConfirmRemoveTeam team={team} isOpen={isOpenPopUp} closeModal={closePopUp} />
+      <PopConfirmRemoveTeam
+        team={team}
+        isOpen={isOpenPopUp}
+        closeModal={closePopUp}
+      />
 
       <ModalUpdateTeam team={team} isOpen={isOpen} closeModal={closeModal} />
-    </div>  
+    </div>
   );
 };
 

@@ -1,4 +1,4 @@
-import { Table} from "antd";
+import { Table } from "antd";
 import type { TableProps } from "antd";
 import { Link } from "react-router-dom";
 
