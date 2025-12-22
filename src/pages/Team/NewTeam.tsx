@@ -1,4 +1,5 @@
 import { useState, type ChangeEvent, type FormEvent } from "react";
+import { toast, ToastContainer } from "react-toastify";
 
 import Input from "../../components/form/input/InputField";
 import Label from "../../components/form/Label";
@@ -6,7 +7,6 @@ import Button from "../../components/ui/button/Button";
 import Select from "../../components/form/Select";
 import useGetAllDepartments from "../../hooks/api/departments/use-get-all-departments";
 import type { DepartmentType } from "../../types/departments";
-import { toast } from "react-toastify";
 import useNewTeam from "../../hooks/api/teams/use-new-team";
 import type { NewTeamRequestType } from "../../types/teams";
 
@@ -59,7 +59,9 @@ const NewTeamPage = () => {
   };
 
   return (
-    <div className="no-scrollbar relative w-full overflow-y-auto bg-white dark:bg-gray-900 lg:p-11">
+    <>
+      <ToastContainer />
+      <div className="no-scrollbar relative w-full overflow-y-auto bg-white dark:bg-gray-900 lg:p-11">
       <div className="px-2 pr-14">
         <h4 className="mb-2 text-2xl font-semibold text-gray-800 dark:text-white/90">
           Tạo Nhóm mới
@@ -115,6 +117,7 @@ const NewTeamPage = () => {
         </div>
       </form>
     </div>
+    </>
   );
 };
 

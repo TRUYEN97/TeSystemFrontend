@@ -14,6 +14,7 @@ import NewUserPage from "./pages/User/NewUser";
 import TeamsPage from "./pages/Team/Teams";
 import NewTeamPage from "./pages/Team/NewTeam";
 import TeamPage from "./pages/Team/Team";
+import LocationsPage from "./pages/Location/Locations";
 
 function App() {
   const [queryClient] = useState(() => new QueryClient());
@@ -35,6 +36,8 @@ function App() {
             <Route path={ROUTE.TEAMS} element={<TeamsPage />} />
             <Route path={ROUTE.NEW_TEAM} element={<NewTeamPage />} />
             <Route path={ROUTE.TEAM_ID} element={<TeamPage />} />
+
+            <Route path={ROUTE.LOCATIONS} element={<LocationsPage />} />
           </Route>
 
           <Route path="*" element={<NotFound />} />

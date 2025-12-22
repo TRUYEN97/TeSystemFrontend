@@ -8,6 +8,7 @@ import { IoEllipsisHorizontalSharp } from "react-icons/io5";
 import { LuUsers } from "react-icons/lu";
 
 import { useSidebar } from "../../hooks/use-sidebar";
+import { ROUTE } from "../../constants/routes";
 
 type NavItem = {
   name: string;
@@ -25,12 +26,17 @@ const navItems: NavItem[] = [
   {
     icon: <LuUsers />,
     name: "Users",
-    path: "/users",
+    path: ROUTE.USERS,
   },
   {
     icon: <GrGroup />,
     name: "Teams",
-    path: "/teams",
+    path: ROUTE.TEAMS,
+  },
+  {
+    icon: <GrGroup />,
+    name: "Locations",
+    path: ROUTE.LOCATIONS,
   },
 ];
 
