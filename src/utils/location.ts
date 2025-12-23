@@ -25,17 +25,17 @@ export const buildTree = (data?: LocationType[]): LocationType[] => {
 
 export const mapToTreeData = (
   nodes: any[],
-  parentKey = '0'
 ): TreeDataNode[] => {
-  return nodes?.map((node, index) => {
-    const key = `${parentKey}-${index}`;
+  console.log('node', nodes)
+
+  return nodes?.map((node) => {
+    const key = node.id;
 
     return {
       title: node.name,
       key,
-      // icon: node.parentId === null ? <MdFactory /> : <CarryOutOutlined />,
       children: node.children?.length
-        ? mapToTreeData(node.children, key)
+        ? mapToTreeData(node.children)
         : undefined,
     };
   });
