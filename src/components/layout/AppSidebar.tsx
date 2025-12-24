@@ -39,6 +39,11 @@ const navItems: NavItem[] = [
     name: "Locations",
     path: ROUTE.LOCATIONS,
   },
+  {
+    icon: <GrGroup />,
+    name: "Teams",
+    path: "/teams",
+  },
 ];
 
 const AppSidebar: React.FC = () => {
