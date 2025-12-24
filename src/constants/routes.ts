@@ -12,5 +12,7 @@ export enum ROUTE {
   TEAM_ID = "/teams/:id",
   NEW_TEAM = "/teams/new",
 
+  LOCATIONS = "/locations",
+
   NOT_FOUND = "/not-found",
 }

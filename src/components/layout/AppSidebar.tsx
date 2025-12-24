@@ -6,8 +6,10 @@ import { IoChevronDown } from "react-icons/io5";
 import { GrGroup } from "react-icons/gr";
 import { IoEllipsisHorizontalSharp } from "react-icons/io5";
 import { LuUsers } from "react-icons/lu";
+import { IoLocationOutline } from "react-icons/io5";
 
 import { useSidebar } from "../../hooks/use-sidebar";
+import { ROUTE } from "../../constants/routes";
 
 type NavItem = {
   name: string;
@@ -25,7 +27,17 @@ const navItems: NavItem[] = [
   {
     icon: <LuUsers />,
     name: "Users",
-    path: "/users",
+    path: ROUTE.USERS,
+  },
+  {
+    icon: <GrGroup />,
+    name: "Teams",
+    path: ROUTE.TEAMS,
+  },
+  {
+    icon: <IoLocationOutline />,
+    name: "Locations",
+    path: ROUTE.LOCATIONS,
   },
   {
     icon: <GrGroup />,
