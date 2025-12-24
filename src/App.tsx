@@ -11,6 +11,9 @@ import UserPage from "./pages/User/User";
 import NotFound from "./pages/NotFound";
 import { ROUTE } from "./constants/routes";
 import NewUserPage from "./pages/User/NewUser";
+import TeamsPage from "./pages/Team/Teams";
+import NewTeamPage from "./pages/Team/NewTeam";
+import TeamPage from "./pages/Team/Team";
 
 function App() {
   const [queryClient] = useState(() => new QueryClient());
@@ -19,14 +22,19 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <Router>
         <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
+          <Route path={ROUTE.LOGIN} element={<Login />} />
+          <Route path={ROUTE.HOME} element={<SignUp />} />
 
           <Route element={<AppLayout />}>
-            <Route index path="/" element={<Home />} />
-            <Route path="/users" element={<UsersPage />} />
-            <Route path="/users/:id" element={<UserPage />} />
+            <Route index path={ROUTE.HOME} element={<Home />} />
+
+            <Route path={ROUTE.USERS} element={<UsersPage />} />
+            <Route path={ROUTE.USER_ID} element={<UserPage />} />
             <Route path={ROUTE.NEW_USER} element={<NewUserPage />} />
+
+            <Route path={ROUTE.TEAMS} element={<TeamsPage />} />
+            <Route path={ROUTE.NEW_TEAM} element={<NewTeamPage />} />
+            <Route path={ROUTE.TEAM_ID} element={<TeamPage />} />
           </Route>
 
           <Route path="*" element={<NotFound />} />

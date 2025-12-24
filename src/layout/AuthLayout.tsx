@@ -12,9 +12,9 @@ export default function AuthLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const {isLoggedIn} = useAuth();
+  const { isLoggedIn } = useAuth();
 
-  if(isLoggedIn) return <Navigate to={ROUTE.HOME} replace />
+  if (isLoggedIn) return <Navigate to={ROUTE.HOME} replace />;
 
   return (
     <>

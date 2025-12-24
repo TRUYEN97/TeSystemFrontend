@@ -7,7 +7,8 @@ import Input from "../../components/form/input/InputField";
 import Label from "../../components/form/Label";
 import MultiSelect from "../../components/form/MultiSelelect";
 import Button from "../../components/ui/button/Button";
-import type { NewUserRequestType, TeamType } from "../../types/users";
+import type { NewUserRequestType } from "../../types/users";
+import type { TeamType } from "../../types/teams";
 import useGetTeams from "../../hooks/api/teams/use-get-teams";
 import useCreateNewUser from "../../hooks/api/users/user-create-new-user";
 

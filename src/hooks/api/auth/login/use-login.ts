@@ -11,7 +11,7 @@ import useAuth from "../../../use-auth";
 
 const useLogin = () => {
   const navigate = useNavigate();
-  const { setIsLoggedIn } = useAuth()
+  const { setIsLoggedIn } = useAuth();
 
   const mutation = useMutation({
     mutationFn: async (data: LoginRequestType) => {

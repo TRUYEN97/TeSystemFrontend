@@ -36,11 +36,11 @@ const LayoutContent: React.FC = () => {
 };
 
 const AppLayout: React.FC = () => {
-    const { isLoggedIn } = useAuth();
+  const { isLoggedIn } = useAuth();
 
   return (
     <SidebarProvider>
-      {isLoggedIn ? <LayoutContent /> : <Navigate to={ROUTE.LOGIN} replace/>}
+      {isLoggedIn ? <LayoutContent /> : <Navigate to={ROUTE.LOGIN} replace />}
     </SidebarProvider>
   );
 };

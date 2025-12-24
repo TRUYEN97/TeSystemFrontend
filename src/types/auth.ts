@@ -39,3 +39,12 @@ export type LoginRequestType = {
 export type LogoutRequestType = {
   refreshToken: string;
 };
+
+export type ErrorResponseType = {
+  response: {
+    data: {
+      message: string;
+    };
+  };
+  message: string;
+};

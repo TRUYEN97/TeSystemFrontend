@@ -1,23 +1,23 @@
 import { Tag } from "antd";
+import { useState } from "react";
 import { FaRegTrashCan } from "react-icons/fa6";
 import { TiPencil } from "react-icons/ti";
 
 import { useModal } from "../../hooks/component/modal/use-modal";
-import type { UserType } from "../../types/users";
-import ModalUpdateUser from "./ModalUpdateUser";
-import { useState } from "react";
-import PopConfirmRemoveUser from "./PopUpConfirmRemoveUser";
+import type { TeamType } from "../../types/teams";
+import ModalUpdateTeam from "./ModalUpdateTeam";
+import PopConfirmRemoveTeam from "./PopUpConfirmRemoveTeam";
 
 type Props = {
-  user: UserType;
+  team: TeamType;
 };
 
-const UserInfoCard = ({ user }: Props) => {
+const TeamDetail = ({ team }: Props) => {
   const { isOpen, openModal, closeModal } = useModal();
 
   const [isOpenPopUp, setOpenPopUp] = useState(false);
 
-  const handleClosePopUp = () => {
+  const closePopUp = () => {
     setOpenPopUp(false);
   };
 
@@ -32,36 +32,19 @@ const UserInfoCard = ({ user }: Props) => {
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-7 2xl:gap-x-32">
             <div>
               <p className="mb-2 text-xs leading-normal text-gray-500 dark:text-gray-400">
-                Họ và tên
+                Tên nhóm
               </p>
               <p className="text-base font-medium text-gray-800 dark:text-white/90">
-                {user?.name}
+                {team?.name}
               </p>
             </div>
 
             <div>
               <p className="mb-2 text-xs leading-normal text-gray-500 dark:text-gray-400">
-                Email
+                Phòng ban
               </p>
               <p className="text-base font-medium text-gray-800 dark:text-white/90">
-                {user?.email}
-              </p>
-            </div>
-
-            <div className="mb-2 col-span-full">
-              <p className="mb-2 text-xs leading-normal text-gray-500 dark:text-gray-400">
-                Teams
-              </p>
-              <p className="text-base font-medium text-gray-800 dark:text-white/90">
-                {user?.teams?.map((team) => {
-                  return (
-                    <span className="mx-1">
-                      <Tag color="blue-inverse" variant="outlined">
-                        {team.name}
-                      </Tag>
-                    </span>
-                  );
-                })}
+                {team?.departmentName}
               </p>
             </div>
           </div>
@@ -85,14 +68,15 @@ const UserInfoCard = ({ user }: Props) => {
         </div>
       </div>
 
-      <PopConfirmRemoveUser
-        user={user}
+      <PopConfirmRemoveTeam
+        team={team}
         isOpen={isOpenPopUp}
-        closeModal={handleClosePopUp}
+        closeModal={closePopUp}
       />
-      <ModalUpdateUser user={user} isOpen={isOpen} closeModal={closeModal} />
+
+      <ModalUpdateTeam team={team} isOpen={isOpen} closeModal={closeModal} />
     </div>
   );
 };
 
-export default UserInfoCard;
+export default TeamDetail;

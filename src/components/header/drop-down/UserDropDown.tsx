@@ -11,7 +11,7 @@ import useAuth from "../../../hooks/use-auth";
 const UserDropdown = () => {
   const navigate = useNavigate();
   const logoutMutation = useLogout();
-  const { setIsLoggedIn } = useAuth(); 
+  const { setIsLoggedIn } = useAuth();
 
   const [isOpen, setIsOpen] = useState(false);
 

@@ -1,8 +1,4 @@
-export type TeamType = {
-  id: number;
-  departmentId: number;
-  name: string;
-};
+import type { TeamType } from "./teams";
 
 export interface UserType {
   id: number;

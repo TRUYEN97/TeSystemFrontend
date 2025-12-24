@@ -6,7 +6,7 @@ import Label from "../form/Label";
 import Button from "../ui/button/Button";
 import type { UserType } from "../../types/users";
 import MultiSelect from "../form/MultiSelelect";
-import type { TeamType } from "../../types/users";
+import type { TeamType } from "../../types/teams";
 import useModalUpdateUser from "../../hooks/pages/users/use-modal-update-user";
 
 type Props = {
@@ -85,10 +85,10 @@ const ModalUpdateUser = ({ user, isOpen, closeModal }: Props) => {
           </div>
           <div className="flex items-center gap-3 px-2 mt-6 lg:justify-end">
             <Button size="sm" variant="outline" onClick={closeModal}>
-              Close
+              Đóng
             </Button>
             <Button size="sm" onClick={handleSave}>
-              Save Changes
+              Lưu
             </Button>
           </div>
         </form>
